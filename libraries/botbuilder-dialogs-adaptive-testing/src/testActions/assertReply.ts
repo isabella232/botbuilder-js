@@ -18,7 +18,7 @@ export interface AssertReplyConfiguration extends AssertReplyActivityConfigurati
  * Test Script action to assert that the bots' reply matches expectations.
  */
 export class AssertReply extends AssertReplyActivity implements AssertReplyConfiguration {
-    public static $kind = 'Microsoft.Test.AssertReply';
+    public static readonly $kind = 'Microsoft.Test.AssertReply';
 
     /**
      * The text value to look for in the reply.

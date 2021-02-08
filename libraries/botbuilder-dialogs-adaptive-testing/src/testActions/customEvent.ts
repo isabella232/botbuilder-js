@@ -15,7 +15,7 @@ export interface CustomEventConfiguration {
 }
 
 export class CustomEvent<T = unknown> extends TestAction implements CustomEventConfiguration {
-    public static $kind = 'Microsoft.Test.CustomEvent';
+    public static readonly $kind = 'Microsoft.Test.CustomEvent';
     /**
      * The event name.
      */

@@ -17,7 +17,7 @@ export interface UserDelayConfiguration {
  * Script action to delay test script for specified timespan.
  */
 export class UserDelay extends TestAction implements UserDelayConfiguration {
-    public static $kind = 'Microsoft.Test.UserDelay';
+    public static readonly $kind = 'Microsoft.Test.UserDelay';
 
     /**
      * The timespan in milliseconds to delay.

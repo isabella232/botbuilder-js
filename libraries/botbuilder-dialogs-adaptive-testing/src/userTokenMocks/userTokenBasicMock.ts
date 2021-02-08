@@ -21,7 +21,7 @@ export interface UserTokenBasicMockConfiguration {
  * Mock UserToken with user id and token.
  */
 export class UserTokenBasicMock extends UserTokenMock implements UserTokenBasicMockConfiguration {
-    public static $kind = 'Microsoft.Test.UserTokenBasicMock';
+    public static readonly $kind = 'Microsoft.Test.UserTokenBasicMock';
 
     /**
      * Gets or sets the connection name.

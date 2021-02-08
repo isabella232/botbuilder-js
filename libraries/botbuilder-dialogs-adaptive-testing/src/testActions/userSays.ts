@@ -18,7 +18,7 @@ export interface UserSaysConfiguration {
  * Action to script sending text to the bot.
  */
 export class UserSays extends TestAction implements UserSaysConfiguration {
-    public static $kind = 'Microsoft.Test.UserSays';
+    public static readonly $kind = 'Microsoft.Test.UserSays';
 
     /**
      * The text to send to the bot.

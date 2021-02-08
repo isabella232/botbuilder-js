@@ -39,7 +39,7 @@ export interface SetPropertiesConfiguration {
  * Mock one or more property values.
  */
 export class SetProperties extends TestAction {
-    public static $kind = 'Microsoft.Test.SetProperties';
+    public static readonly $kind = 'Microsoft.Test.SetProperties';
 
     /**
      * Gets or sets the property assignments.

@@ -19,7 +19,7 @@ export interface UserActivityConfiguration {
  * Send an activity to the bot.
  */
 export class UserActivity extends TestAction implements UserActivityConfiguration {
-    public static $kind = 'Microsoft.Test.UserActivity';
+    public static readonly $kind = 'Microsoft.Test.UserActivity';
 
     /**
      * The activity to compare.

@@ -17,7 +17,7 @@ export interface AssertNoActivityConfiguration {
  * Basic assertion TestAction, which validates assertions against a reply activity.
  */
 export class AssertNoActivity extends TestAction implements AssertNoActivityConfiguration {
-    public static $kind = 'Microsoft.Test.AssertNoActivity';
+    public static readonly $kind = 'Microsoft.Test.AssertNoActivity';
 
     /**
      * Description of this assertion.

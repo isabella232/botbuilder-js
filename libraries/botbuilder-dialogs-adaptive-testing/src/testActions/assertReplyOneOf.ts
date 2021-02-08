@@ -18,7 +18,7 @@ export interface AssertReplyOneOfConfiguration extends AssertReplyActivityConfig
  * Assertion that reply from the bot matches one of options.
  */
 export class AssertReplyOneOf extends AssertReplyActivity implements AssertReplyOneOfConfiguration {
-    public static $kind = 'Microsoft.Test.AssertReplyOneOf';
+    public static readonly $kind = 'Microsoft.Test.AssertReplyOneOf';
 
     /**
      * The text variations.

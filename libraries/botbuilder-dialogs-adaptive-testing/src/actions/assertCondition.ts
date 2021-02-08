@@ -25,7 +25,7 @@ export interface AssertConditionConfiguration extends DialogConfiguration {
  * Dialog action which allows you to add assertions into your dialog flow.
  */
 export class AssertCondition<O extends object = {}> extends Dialog<O> implements AssertConditionConfiguration {
-    public static $kind = 'Microsoft.Test.AssertCondition';
+    public static readonly $kind = 'Microsoft.Test.AssertCondition';
 
     /**
      * Condition which must be true.

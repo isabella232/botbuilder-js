@@ -18,7 +18,7 @@ export interface UserTypingConfiguration {
  * Action to script sending typing activity to the bot.
  */
 export class UserTyping extends Configurable implements TestAction, UserTypingConfiguration {
-    public static $kind = 'Microsoft.Test.UserTyping';
+    public static readonly $kind = 'Microsoft.Test.UserTyping';
 
     /**
      * If user is set then the channalAccount.id and channelAccount.name will be from user.

@@ -18,7 +18,7 @@ export interface UserConversationUpdateConfiguration {
  * Action to script sending a conversationUpdate activity to the bot.
  */
 export class UserConversationUpdate extends TestAction implements UserConversationUpdateConfiguration {
-    public static $kind = 'Microsoft.Test.UserConversationUpdate';
+    public static readonly $kind = 'Microsoft.Test.UserConversationUpdate';
 
     /**
      * The members added names.

@@ -19,7 +19,7 @@ export interface MemoryAssertionsConfiguration {
  * Run assertions against memory.
  */
 export class MemoryAssertions extends TestAction implements MemoryAssertionsConfiguration {
-    public static $kind = 'Microsoft.Test.MemoryAssertions';
+    public static readonly $kind = 'Microsoft.Test.MemoryAssertions';
 
     /**
      * Gets or sets the description of this assertion.
