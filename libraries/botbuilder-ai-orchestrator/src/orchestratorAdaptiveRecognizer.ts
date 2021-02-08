@@ -52,7 +52,7 @@ type Orchestrator = {
  * Class that represents an adaptive Orchestrator recognizer.
  */
 export class OrchestratorAdaptiveRecognizer extends Recognizer implements OrchestratorAdaptiveRecognizerConfiguration {
-    public static $kind = 'Microsoft.OrchestratorRecognizer';
+    public static readonly $kind = 'Microsoft.OrchestratorRecognizer';
 
     /**
      * Path to Orchestrator base model folder.

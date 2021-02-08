@@ -119,7 +119,7 @@ export interface QnAMakerDialogConfiguration extends DialogConfiguration {
  * The dialog will also present user with appropriate multi-turn prompt or active learning options.
  */
 export class QnAMakerDialog extends WaterfallDialog implements QnAMakerDialogConfiguration {
-    public static $kind = 'Microsoft.QnAMakerDialog';
+    public static readonly $kind = 'Microsoft.QnAMakerDialog';
 
     // state and step value key constants
 

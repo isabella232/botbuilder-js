@@ -55,7 +55,7 @@ export interface LuisAdaptiveRecognizerConfiguration extends RecognizerConfigura
  * Class that represents an adaptive LUIS recognizer.
  */
 export class LuisAdaptiveRecognizer extends Recognizer implements LuisAdaptiveRecognizerConfiguration {
-    public static $kind = 'Microsoft.LuisRecognizer';
+    public static readonly $kind = 'Microsoft.LuisRecognizer';
 
     /**
      * LUIS application ID.
