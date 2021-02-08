@@ -19,7 +19,7 @@ export interface DateTimeInputConfiguration extends InputDialogConfiguration {
  * Input dialog to collect a datetime from the user.
  */
 export class DateTimeInput extends InputDialog implements DateTimeInputConfiguration {
-    public static $kind = 'Microsoft.DateTimeInput';
+    public static readonly $kind = 'Microsoft.DateTimeInput';
 
     public defaultLocale: StringExpression;
 

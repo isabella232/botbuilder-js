@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class DateTimeEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.DateTimeEntityRecognizer';
+    public static readonly $kind = 'Microsoft.DateTimeEntityRecognizer';
 
     /**
      * @protected

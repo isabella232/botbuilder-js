@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class OrdinalEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.OrdinalEntityRecognizer';
+    public static readonly $kind = 'Microsoft.OrdinalEntityRecognizer';
 
     /**
      * @protected

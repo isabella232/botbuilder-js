@@ -30,7 +30,7 @@ export interface ForEachConfiguration extends ActionScopeConfiguration {
  * Executes a set of actions once for each item in an in-memory list or collection.
  */
 export class ForEach<O extends object = {}> extends ActionScope<O> implements ForEachPageConfiguration {
-    public static $kind = 'Microsoft.Foreach';
+    public static readonly $kind = 'Microsoft.Foreach';
 
     public constructor();
 

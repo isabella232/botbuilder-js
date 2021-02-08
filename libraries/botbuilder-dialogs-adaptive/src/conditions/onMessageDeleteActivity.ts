@@ -13,7 +13,7 @@ import { OnActivity } from './onActivity';
  * Actions triggered when a MessageDeleteActivity is received.
  */
 export class OnMessageDeleteActivity extends OnActivity {
-    public static $kind = 'Microsoft.OnMessageDeleteActivity';
+    public static readonly $kind = 'Microsoft.OnMessageDeleteActivity';
 
     /**
      * Initializes a new instance of the [OnMessageDeleteActivity](xref:botbuilder-dialogs-adaptive.OnMessageDeleteActivity) class.

@@ -47,7 +47,7 @@ export interface OnConditionConfiguration {
  * Actions triggered when condition is true.
  */
 export class OnCondition extends Configurable implements DialogDependencies, OnConditionConfiguration {
-    public static $kind = 'Microsoft.OnCondition';
+    public static readonly $kind = 'Microsoft.OnCondition';
 
     /**
      * Evaluates the rule and returns a predicted set of changes that should be applied to the

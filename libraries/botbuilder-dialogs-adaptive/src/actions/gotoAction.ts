@@ -31,7 +31,7 @@ export interface GotoActionConfiguration extends DialogConfiguration {
  * Goto an action by Id.
  */
 export class GotoAction<O extends object = {}> extends Dialog<O> implements GotoActionConfiguration {
-    public static $kind = 'Microsoft.GotoAction';
+    public static readonly $kind = 'Microsoft.GotoAction';
 
     public constructor();
 

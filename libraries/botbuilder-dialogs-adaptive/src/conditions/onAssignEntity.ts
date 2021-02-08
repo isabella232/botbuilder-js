@@ -20,7 +20,7 @@ export interface OnAssignEntityConfiguration extends OnDialogEventConfiguration 
  * Triggered to assign an entity to a property.
  */
 export class OnAssignEntity extends OnDialogEvent implements OnAssignEntityConfiguration {
-    public static $kind = 'Microsoft.OnAssignEntity';
+    public static readonly $kind = 'Microsoft.OnAssignEntity';
   
     /**
      * Initializes a new instance of the [OnAssignEntity](xref:botbuilder-dialogs-adaptive.OnAssignEntity) class.

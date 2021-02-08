@@ -19,7 +19,7 @@ export interface OnChooseEntityConfiguration extends OnDialogEventConfiguration 
  * Triggered to choose between different possible entity resolutions.
  */
 export class OnChooseEntity extends OnDialogEvent implements OnChooseEntityConfiguration {
-    public static $kind = 'Microsoft.OnChooseEntity';
+    public static readonly $kind = 'Microsoft.OnChooseEntity';
 
     /**
      * Initializes a new instance of the [OnChooseEntity](xref:botbuilder-dialogs-adaptive.OnChooseEntity) class.

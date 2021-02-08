@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class TemperatureEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.TemperatureEntityRecognizer';
+    public static readonly $kind = 'Microsoft.TemperatureEntityRecognizer';
 
     /**
      * @protected

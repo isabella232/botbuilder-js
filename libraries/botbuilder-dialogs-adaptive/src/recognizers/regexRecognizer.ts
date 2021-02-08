@@ -31,7 +31,7 @@ export interface RegexRecognizerConfiguration extends RecognizerSetConfiguration
 }
 
 export class RegexRecognizer extends Recognizer implements RegexRecognizerConfiguration {
-    public static $kind = 'Microsoft.RegexRecognizer';
+    public static readonly $kind = 'Microsoft.RegexRecognizer';
 
     /**
      * Dictionary of patterns -> intent names.

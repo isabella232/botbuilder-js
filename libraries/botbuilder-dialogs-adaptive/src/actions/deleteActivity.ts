@@ -30,7 +30,7 @@ export interface DeleteActivityConfiguration extends DialogConfiguration {
  * Ends and deletes an activity.
  */
 export class DeleteActivity<O extends object = {}> extends Dialog<O> implements DeleteActivityConfiguration {
-    public static $kind = 'Microsoft.DeleteActivity';
+    public static readonly $kind = 'Microsoft.DeleteActivity';
 
     public constructor();
 

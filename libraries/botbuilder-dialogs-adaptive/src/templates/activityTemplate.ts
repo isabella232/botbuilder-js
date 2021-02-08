@@ -28,7 +28,7 @@ export interface ActivityTemplateConguration {
  */
 export class ActivityTemplate
     implements TemplateInterface<Partial<Activity>, DialogStateManager>, ActivityTemplateConguration, Configurable {
-    public static $kind = 'Microsoft.ActivityTemplate';
+    public static readonly $kind = 'Microsoft.ActivityTemplate';
 
     /**
      * Initialize a new instance of ActivityTemplate class.

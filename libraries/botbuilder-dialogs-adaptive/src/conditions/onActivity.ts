@@ -18,7 +18,7 @@ export interface OnActivityConfiguration extends OnDialogEventConfiguration {
  * Actions triggered when an [Activity](xref:botframework-schema.Activity) of a given type is received.
  */
 export class OnActivity extends OnDialogEvent implements OnActivityConfiguration {
-    public static $kind = 'Microsoft.OnActivity';
+    public static readonly $kind = 'Microsoft.OnActivity';
 
     /**
      * Gets or sets the ActivityType which must be matched for this to trigger.

@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class AgeEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.AgeEntityRecognizer';
+    public static readonly $kind = 'Microsoft.AgeEntityRecognizer';
 
     /**
      * @protected

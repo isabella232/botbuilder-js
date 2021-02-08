@@ -51,7 +51,7 @@ export interface BeginSkillConfiguration extends DialogConfiguration {
  * Begin a Skill.
  */
 export class BeginSkill extends SkillDialog implements BeginSkillConfiguration {
-    public static $kind = 'Microsoft.BeginSkill';
+    public static readonly $kind = 'Microsoft.BeginSkill';
 
     /**
      * Optional expression which if is true will disable this action.

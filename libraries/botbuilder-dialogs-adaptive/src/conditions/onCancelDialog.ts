@@ -13,7 +13,7 @@ import { OnDialogEvent } from './onDialogEvent';
  * Actions triggered when an dialog was canceled.
  */
 export class OnCancelDialog extends OnDialogEvent {
-    public static $kind = 'Microsoft.OnCancelDialog';
+    public static readonly $kind = 'Microsoft.OnCancelDialog';
 
     /**
      * Initializes a new instance of the [OnCancelDialog](xref:botbuilder-dialogs-adaptive.OnCancelDialog) class.

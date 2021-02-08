@@ -26,7 +26,7 @@ export interface NumberInputConfiguration extends InputDialogConfiguration {
  * Input dialog for asking for numbers.
  */
 export class NumberInput extends InputDialog implements NumberInputConfiguration {
-    public static $kind = 'Microsoft.NumberInput';
+    public static readonly $kind = 'Microsoft.NumberInput';
 
     public defaultLocale?: StringExpression;
 

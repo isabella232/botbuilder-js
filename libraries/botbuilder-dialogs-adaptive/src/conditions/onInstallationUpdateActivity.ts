@@ -14,7 +14,7 @@ import { OnActivity } from './onActivity';
  * Actions triggered when a InstallationUpdateActivity is received.
  */
 export class OnInstallationUpdateActivity extends OnActivity {
-    public static $kind = 'Microsoft.OnInstallationUpdateActivity';
+    public static readonly $kind = 'Microsoft.OnInstallationUpdateActivity';
 
     /**
      * Initializes a new instance of the [OnInstallationUpdateActivity](xref:botbuilder-dialogs-adaptive.OnInstallationUpdateActivity) class.

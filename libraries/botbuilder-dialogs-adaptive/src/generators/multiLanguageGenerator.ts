@@ -15,7 +15,7 @@ import { LanguageGenerator } from '../languageGenerator';
  * and has a policy which controls fallback (try en-us -> en -> default).
  */
 export class MultiLanguageGenerator extends MultiLanguageGeneratorBase {
-    public static $kind = 'Microsoft.MultiLanguageGenerator';
+    public static readonly $kind = 'Microsoft.MultiLanguageGenerator';
 
     /**
      * Gets or sets the language generators for multiple languages.

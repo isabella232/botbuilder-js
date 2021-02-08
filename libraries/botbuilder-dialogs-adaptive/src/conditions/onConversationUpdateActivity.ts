@@ -13,7 +13,7 @@ import { OnActivity } from './onActivity';
  * Actions triggered when ConversationUpdateActivity is received.
  */
 export class OnConversationUpdateActivity extends OnActivity {
-    public static $kind = 'Microsoft.OnConversationUpdateActivity';
+    public static readonly $kind = 'Microsoft.OnConversationUpdateActivity';
 
     /**
      * Initializes a new instance of the [OnConversationUpdateActivity](xref:botbuilder-dialogs-adaptive.OnConversationUpdateActivity) class.

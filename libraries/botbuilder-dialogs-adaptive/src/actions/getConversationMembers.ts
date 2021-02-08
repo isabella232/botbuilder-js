@@ -41,7 +41,7 @@ export interface GetConversationMembersConfiguration extends DialogConfiguration
 export class GetConversationMembers<O extends object = {}>
     extends Dialog<O>
     implements GetConversationMembersConfiguration {
-    public static $kind = 'Microsoft.GetConversationMembers';
+    public static readonly $kind = 'Microsoft.GetConversationMembers';
 
     public constructor();
 

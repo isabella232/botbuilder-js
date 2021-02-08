@@ -20,7 +20,7 @@ export interface TextTemplateConfiguration {
  */
 export class TextTemplate<D = Record<string, unknown>>
     implements TemplateInterface<string, D>, TextTemplateConfiguration, Configurable {
-    public static $kind = 'Microsoft.TextTemplate';
+    public static readonly $kind = 'Microsoft.TextTemplate';
 
     /**
      * Initialize a new instance of TextTemplate class.

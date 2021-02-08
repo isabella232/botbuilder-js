@@ -42,7 +42,7 @@ export interface ConfirmInputConfiguration extends InputDialogConfiguration {
  * Declarative input control that will gather yes/no confirmation input from a set of choices.
  */
 export class ConfirmInput extends InputDialog implements ConfirmInputConfiguration {
-    public static $kind = 'Microsoft.ConfirmInput';
+    public static readonly $kind = 'Microsoft.ConfirmInput';
 
     /**
      * Default options for rendering the choices to the user based on locale.

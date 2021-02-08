@@ -31,7 +31,7 @@ export interface SignOutUserConfiguration extends DialogConfiguration {
  * Singns out the user and finishes the dialog.
  */
 export class SignOutUser<O extends object = {}> extends Dialog<O> implements SignOutUserConfiguration {
-    public static $kind = 'Microsoft.SignOutUser';
+    public static readonly $kind = 'Microsoft.SignOutUser';
 
     public constructor();
 

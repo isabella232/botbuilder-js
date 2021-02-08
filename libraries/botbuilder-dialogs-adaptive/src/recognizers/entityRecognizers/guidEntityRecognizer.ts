@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class GuidEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.GuidEntityRecognizer';
+    public static readonly $kind = 'Microsoft.GuidEntityRecognizer';
 
     /**
      * @protected

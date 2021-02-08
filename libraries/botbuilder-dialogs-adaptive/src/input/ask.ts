@@ -38,7 +38,7 @@ export interface AskConfiguration extends SendActivityConfiguration {
  * `DialogPath.retries` is updated as the same question is asked multiple times.
  */
 export class Ask extends SendActivity implements AskConfiguration {
-    public static $kind = 'Microsoft.Ask';
+    public static readonly $kind = 'Microsoft.Ask';
 
     /**
      *Initializes a new instance of the [Ask](xref:botbuilder-dialogs-adaptive.Ask) class.

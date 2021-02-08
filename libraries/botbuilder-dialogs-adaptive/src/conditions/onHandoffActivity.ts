@@ -13,7 +13,7 @@ import { OnActivity } from './onActivity';
  * Actions triggered when a HandoffActivity is received.
  */
 export class OnHandoffActivity extends OnActivity {
-    public static $kind = 'Microsoft.OnHandoffActivity';
+    public static readonly $kind = 'Microsoft.OnHandoffActivity';
 
     /**
      * Initializes a new instance of the [OnHandoffActivity](xref:botbuilder-dialogs-adaptive.OnHandoffActivity) class.

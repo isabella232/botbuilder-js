@@ -15,7 +15,7 @@ export interface RegexEntityRecognizerConfiguration {
 }
 
 export class RegexEntityRecognizer extends TextEntityRecognizer implements RegexEntityRecognizerConfiguration {
-    public static $kind = 'Microsoft.RegexEntityRecognizer';
+    public static readonly $kind = 'Microsoft.RegexEntityRecognizer';
 
     public constructor();
     /**

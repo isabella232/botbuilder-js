@@ -14,7 +14,7 @@ export interface TextInputConfiguration extends InputDialogConfiguration {
 }
 
 export class TextInput extends InputDialog implements TextInputConfiguration {
-    public static $kind = 'Microsoft.TextInput';
+    public static readonly $kind = 'Microsoft.TextInput';
 
     public outputFormat: StringExpression;
 

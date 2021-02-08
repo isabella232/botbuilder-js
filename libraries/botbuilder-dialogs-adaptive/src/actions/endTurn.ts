@@ -24,7 +24,7 @@ export interface EndTurnConfiguration extends DialogConfiguration {
  * This command ends the current turn without ending the [Dialog](xref:botbuilder-dialogs.Dialog).
  */
 export class EndTurn<O extends object = {}> extends Dialog<O> implements EndTurnConfiguration {
-    public static $kind = 'Microsoft.EndTurn';
+    public static readonly $kind = 'Microsoft.EndTurn';
 
     /**
      * An optional expression which if is true will disable this action.

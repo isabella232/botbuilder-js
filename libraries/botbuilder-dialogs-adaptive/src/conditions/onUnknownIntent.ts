@@ -21,7 +21,7 @@ import { OnDialogEvent } from './onDialogEvent';
  * This provides the parent dialogs the opportunity to handle global commands as fallback interruption.
  */
 export class OnUnknownIntent extends OnDialogEvent {
-    public static $kind = 'Microsoft.OnUnknownIntent';
+    public static readonly $kind = 'Microsoft.OnUnknownIntent';
 
     /**
      * Creates a new `OnUnknownIntent` instance.

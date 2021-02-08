@@ -31,7 +31,7 @@ export interface GetActivityMembersConfiguration extends DialogConfiguration {
  * Calls `BotFrameworkAdapter.getActivityMembers()` and sets the result to a memory property.
  */
 export class GetActivityMembers<O extends object = {}> extends Dialog implements GetActivityMembersConfiguration {
-    public static $kind = 'Microsoft.GetActivityMembers';
+    public static readonly $kind = 'Microsoft.GetActivityMembers';
 
     public constructor();
 

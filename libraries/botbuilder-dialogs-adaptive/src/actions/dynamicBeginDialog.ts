@@ -14,7 +14,7 @@ import { BeginDialog } from './beginDialog';
  * Internal `BeginDialog` action which dynamically binds x.schema/x.dialog to invoke the x.dialog resource with properties as the options.
  */
 export class DynamicBeginDialog extends BeginDialog {
-    public static $kind = 'Microsoft.DynamicBeginDialog';
+    public static readonly $kind = 'Microsoft.DynamicBeginDialog';
 
     /**
      * @protected

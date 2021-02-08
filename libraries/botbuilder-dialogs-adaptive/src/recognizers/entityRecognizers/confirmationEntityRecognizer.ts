@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class ConfirmationEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.ConfirmationEntityRecognizer';
+    public static readonly $kind = 'Microsoft.ConfirmationEntityRecognizer';
 
     /**
      * @protected

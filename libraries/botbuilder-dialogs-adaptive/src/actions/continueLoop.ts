@@ -24,7 +24,7 @@ export interface ContinueLoopConfiguration extends DialogConfiguration {
  * Continue the loop.
  */
 export class ContinueLoop<O extends object = {}> extends Dialog<O> implements ContinueLoopConfiguration {
-    public static $kind = 'Microsoft.ContinueLoop';
+    public static readonly $kind = 'Microsoft.ContinueLoop';
 
     /**
      * An optional expression which if is true will disable this action.

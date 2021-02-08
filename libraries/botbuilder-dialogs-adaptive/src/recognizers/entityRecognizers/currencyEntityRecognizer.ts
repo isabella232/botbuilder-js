@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class CurrencyEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.CurrencyEntityRecognizer';
+    public static readonly $kind = 'Microsoft.CurrencyEntityRecognizer';
 
     /**
      * @protected

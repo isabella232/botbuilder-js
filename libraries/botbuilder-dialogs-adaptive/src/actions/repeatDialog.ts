@@ -18,7 +18,7 @@ export interface RepeatDialogConfiguration extends BaseInvokeDialogConfiguration
  * Action which repeats the active [Dialog](xref:botbuilder-dialogs.Dialog) (restarting it).
  */
 export class RepeatDialog<O extends object = {}> extends BaseInvokeDialog<O> implements RepeatDialogConfiguration {
-    public static $kind = 'Microsoft.RepeatDialog';
+    public static readonly $kind = 'Microsoft.RepeatDialog';
 
     public constructor();
 

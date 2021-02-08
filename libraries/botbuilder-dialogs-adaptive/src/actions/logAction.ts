@@ -37,7 +37,7 @@ export interface LogActionConfiguration extends DialogConfiguration {
  * Write entry into application trace logs.
  */
 export class LogAction<O extends object = {}> extends Dialog<O> implements LogActionConfiguration {
-    public static $kind = 'Microsoft.LogAction';
+    public static readonly $kind = 'Microsoft.LogAction';
 
     /**
      * Creates a new [LogAction](xref:botbuilder-dialogs-adaptive.LogAction) instance.

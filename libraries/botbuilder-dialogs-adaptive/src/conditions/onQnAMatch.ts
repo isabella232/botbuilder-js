@@ -14,7 +14,7 @@ const qnaMatchIntent = 'QnAMatch';
  * Actions triggered when a MessageUpdateActivity is received.
  */
 export class OnQnAMatch extends OnIntent {
-    public static $kind = 'Microsoft.OnQnAMatch';
+    public static readonly $kind = 'Microsoft.OnQnAMatch';
 
     /**
      * Initializes a new instance of the [OnQnAMatch](xref:botbuilder-dialogs-adaptive.OnQnAMatch) class.

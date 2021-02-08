@@ -31,7 +31,7 @@ export interface EndDialogConfiguration extends DialogConfiguration {
  * Command to end the current [Dialog](xref:botbuilder-dialogs.Dialog), returning the `resultProperty` as the result of the dialog.
  */
 export class EndDialog<O extends object = {}> extends Dialog<O> implements EndDialogConfiguration {
-    public static $kind = 'Microsoft.EndDialog';
+    public static readonly $kind = 'Microsoft.EndDialog';
 
     /**
      * Creates a new `EndDialog` instance.

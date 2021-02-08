@@ -23,7 +23,7 @@ export interface AttachmentInputConfiguration extends InputDialogConfiguration {
  * Input dialog which prompts the user to send a file.
  */
 export class AttachmentInput extends InputDialog implements AttachmentInputConfiguration {
-    public static $kind = 'Microsoft.AttachmentInput';
+    public static readonly $kind = 'Microsoft.AttachmentInput';
     public outputFormat: EnumExpression<AttachmentOutputFormat> = new EnumExpression<AttachmentOutputFormat>(
         AttachmentOutputFormat.first
     );

@@ -157,7 +157,7 @@ export interface HttpRequestConfiguration extends DialogConfiguration {
  * Action for performing an `HttpRequest`.
  */
 export class HttpRequest<O extends object = {}> extends Dialog<O> implements HttpRequestConfiguration {
-    public static $kind = 'Microsoft.HttpRequest';
+    public static readonly $kind = 'Microsoft.HttpRequest';
 
     public constructor();
 

@@ -13,7 +13,7 @@ import { OnActivity } from './onActivity';
  * Actions triggered when an InvokeActivity is received.
  */
 export class OnInvokeActivity extends OnActivity {
-    public static $kind = 'Microsoft.OnInvokeActivity';
+    public static readonly $kind = 'Microsoft.OnInvokeActivity';
 
     /**
      * Initializes a new instance of the [OnInvokeActivity](xref:botbuilder-dialogs-adaptive.OnInvokeActivity) class.

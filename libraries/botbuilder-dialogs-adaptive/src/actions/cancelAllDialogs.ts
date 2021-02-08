@@ -12,7 +12,7 @@ import { CancelAllDialogsBase } from './cancelAllDialogsBase';
  * Command to cancel all of the current [Dialogs](xref:botbuilder-dialogs.Dialog) by emitting an event that must be caught to prevent cancellation from propagating.
  */
 export class CancelAllDialogs<O extends object = {}> extends CancelAllDialogsBase<O> {
-    public static $kind = 'Microsoft.CancelAllDialogs';
+    public static readonly $kind = 'Microsoft.CancelAllDialogs';
 
     public constructor();
 

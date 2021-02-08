@@ -17,7 +17,7 @@ export interface OnDialogEventConfiguration extends OnConditionConfiguration {
  * Actions triggered when a dialog event is emitted.
  */
 export class OnDialogEvent extends OnCondition implements OnDialogEventConfiguration {
-    public static $kind = 'Microsoft.OnDialogEvent';
+    public static readonly $kind = 'Microsoft.OnDialogEvent';
 
     /**
      * Gets or sets the event to fire on.

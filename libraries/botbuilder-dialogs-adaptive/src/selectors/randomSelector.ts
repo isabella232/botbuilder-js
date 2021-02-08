@@ -14,7 +14,7 @@ import { ActionContext } from '../actionContext';
  * Select a random true rule implementation of TriggerSelector.
  */
 export class RandomSelector extends TriggerSelector {
-    public static $kind = 'Microsoft.RandomSelector';
+    public static readonly $kind = 'Microsoft.RandomSelector';
 
     private _conditionals: OnCondition[];
     private _evaluate: boolean;

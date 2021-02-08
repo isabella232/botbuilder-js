@@ -18,7 +18,7 @@ export interface MultiLanguageRecognizerConfiguration extends RecognizerConfigur
 }
 
 export class MultiLanguageRecognizer extends Recognizer implements MultiLanguageRecognizerConfiguration {
-    public static $kind = 'Microsoft.MultiLanguageRecognizer';
+    public static readonly $kind = 'Microsoft.MultiLanguageRecognizer';
 
     public languagePolicy: LanguagePolicy;
 

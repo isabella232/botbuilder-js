@@ -13,7 +13,7 @@ import { AdaptiveEvents } from '../adaptiveEvents';
  * Actions triggered when an RepromptDialog event is emitted.
  */
 export class OnRepromptDialog extends OnDialogEvent {
-    public static $kind = 'Microsoft.OnRepromptDialog';
+    public static readonly $kind = 'Microsoft.OnRepromptDialog';
 
     /**
      * Initializes a new instance of the [OnRepromptDialog](xref:botbuilder-dialogs-adaptive.OnRepromptDialog) class.

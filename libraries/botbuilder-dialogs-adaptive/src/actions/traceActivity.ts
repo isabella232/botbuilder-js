@@ -36,7 +36,7 @@ export interface TraceActivityConfiguration extends DialogConfiguration {
  * Send an trace activity back to the transcript.
  */
 export class TraceActivity<O extends object = {}> extends Dialog<O> implements TraceActivityConfiguration {
-    public static $kind = 'Microsoft.TraceActivity';
+    public static readonly $kind = 'Microsoft.TraceActivity';
 
     public constructor();
 

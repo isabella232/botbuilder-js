@@ -18,7 +18,7 @@ export interface OnChooseIntentConfiguration extends OnIntentConfiguration {
  * Actions triggered when an Intent of "ChooseIntent" has been emitted by a [Recognizer](xref:botbuilder-dialogs-adaptive.Recognizer).
  */
 export class OnChooseIntent extends OnIntent implements OnChooseIntentConfiguration {
-    public static $kind = 'Microsoft.OnChooseIntent';
+    public static readonly $kind = 'Microsoft.OnChooseIntent';
 
     public intents: string[] = [];
 

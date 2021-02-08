@@ -15,7 +15,7 @@ export interface MostSpecificSelectorConfiguration extends TriggerSelectorConfig
 }
 
 export class MostSpecificSelector extends TriggerSelector implements MostSpecificSelectorConfiguration {
-    public static $kind = 'Microsoft.MostSpecificSelector';
+    public static readonly $kind = 'Microsoft.MostSpecificSelector';
 
     private readonly _tree = new TriggerTree();
 

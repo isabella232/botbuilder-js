@@ -40,7 +40,7 @@ export interface EditActionsConfiguration extends DialogConfiguration {
 export class EditActions<O extends object = {}>
     extends Dialog<O>
     implements DialogDependencies, EditActionsConfiguration {
-    public static $kind = 'Microsoft.EditActions';
+    public static readonly $kind = 'Microsoft.EditActions';
 
     public constructor();
 

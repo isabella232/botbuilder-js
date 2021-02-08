@@ -31,7 +31,7 @@ export interface ThrowExceptionConfiguration extends DialogConfiguration {
  * Action which throws an exception declaratively.
  */
 export class ThrowException extends Dialog implements ThrowExceptionConfiguration {
-    public static $kind = 'Microsoft.ThrowException';
+    public static readonly $kind = 'Microsoft.ThrowException';
 
     /**
      * Initializes a new instance of the [ThrowException](xref:botbuilder-dialogs-adaptive.ThrowException) class.

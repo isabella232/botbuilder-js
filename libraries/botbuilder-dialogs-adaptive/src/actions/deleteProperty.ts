@@ -30,7 +30,7 @@ export interface DeletePropertyConfiguration extends DialogConfiguration {
  * Deletes a property from memory.
  */
 export class DeleteProperty<O extends object = {}> extends Dialog<O> implements DeletePropertyConfiguration {
-    public static $kind = 'Microsoft.DeleteProperty';
+    public static readonly $kind = 'Microsoft.DeleteProperty';
 
     /**
      * Creates a new `DeleteProperty` instance.

@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class PhoneNumberEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.PhoneNumberEntityRecognizer';
+    public static readonly $kind = 'Microsoft.PhoneNumberEntityRecognizer';
 
     /**
      * @protected

@@ -53,7 +53,7 @@ export interface SwitchConditionConfiguration extends DialogConfiguration {
 export class SwitchCondition<O extends object = {}>
     extends Dialog<O>
     implements DialogDependencies, SwitchConditionConfiguration {
-    public static $kind = 'Microsoft.SwitchCondition';
+    public static readonly $kind = 'Microsoft.SwitchCondition';
 
     public constructor();
 

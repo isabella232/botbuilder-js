@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class PercentageEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.PercentageEntityRecognizer';
+    public static readonly $kind = 'Microsoft.PercentageEntityRecognizer';
 
     /**
      * @protected

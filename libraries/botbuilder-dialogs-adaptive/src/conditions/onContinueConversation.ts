@@ -13,7 +13,7 @@ import { OnEventActivity } from './onEventActivity';
  * Actions triggered when an EventActivity is received.
  */
 export class OnContinueConversation extends OnEventActivity {
-    public static $kind = 'Microsoft.OnContinueConversation';
+    public static readonly $kind = 'Microsoft.OnContinueConversation';
 
     /**
      * Initializes a new instance of the [OnContinueConversation](xref:botbuilder-dialogs-adaptive.OnContinueConversation) class.

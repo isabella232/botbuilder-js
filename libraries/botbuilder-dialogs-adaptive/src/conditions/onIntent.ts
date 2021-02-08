@@ -24,7 +24,7 @@ export interface OnIntentConfiguration extends OnDialogEventConfiguration {
  * Actions triggered when an Activity has been received and the recognized intents and entities match specified list of intent and entity filters.
  */
 export class OnIntent extends OnDialogEvent implements OnIntentConfiguration {
-    public static $kind = 'Microsoft.OnIntent';
+    public static readonly $kind = 'Microsoft.OnIntent';
 
     /**
      * Gets or sets intent to match on.

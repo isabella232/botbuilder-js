@@ -17,7 +17,7 @@ export interface ReplaceDialogConfiguration extends BaseInvokeDialogConfiguratio
  * Action which calls another [Dialog](xref:botbuilder-dialogs.Dialog), when it is done it will go to the caller's parent dialog.
  */
 export class ReplaceDialog<O extends object = {}> extends BaseInvokeDialog<O> implements ReplaceDialogConfiguration {
-    public static $kind = 'Microsoft.ReplaceDialog';
+    public static readonly $kind = 'Microsoft.ReplaceDialog';
 
     /**
      * Creates a new [ReplaceDialog](xref:botbuilder-dialogs-adaptive.ReplaceDialog) instance.

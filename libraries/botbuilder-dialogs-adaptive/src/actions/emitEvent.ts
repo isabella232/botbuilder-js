@@ -35,7 +35,7 @@ export interface EmitEventConfiguration extends DialogConfiguration {
  * Action which emits an event declaratively.
  */
 export class EmitEvent<O extends object = {}> extends Dialog<O> implements EmitEventConfiguration {
-    public static $kind = 'Microsoft.EmitEvent';
+    public static readonly $kind = 'Microsoft.EmitEvent';
   
     public constructor();
 

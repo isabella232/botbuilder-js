@@ -13,7 +13,7 @@ import { OnActivity } from './onActivity';
  * Actions triggered when EndOfConversationActivity is received.
  */
 export class OnEndOfConversationActivity extends OnActivity {
-    public static $kind = 'Microsoft.OnEndOfConversationActivity';
+    public static readonly $kind = 'Microsoft.OnEndOfConversationActivity';
 
     /**
      * Initializes a new instance of the [OnEndOfConversationActivity](xref:botbuilder-dialogs-adaptive.OnEndOfConversationActivity) class.

@@ -24,7 +24,7 @@ export interface BreakLoopConfiguration extends DialogConfiguration {
  * Break out of a loop.
  */
 export class BreakLoop<O extends object = {}> extends Dialog<O> implements BreakLoopConfiguration {
-    public static $kind = 'Microsoft.BreakLoop';
+    public static readonly $kind = 'Microsoft.BreakLoop';
 
     /**
      * An optional expression which if is true will disable this action.

@@ -33,7 +33,7 @@ export interface SendActivityConfiguration extends DialogConfiguration {
  * Send an activity back to the user.
  */
 export class SendActivity<O extends object = {}> extends Dialog<O> implements SendActivityConfiguration {
-    public static $kind = 'Microsoft.SendActivity';
+    public static readonly $kind = 'Microsoft.SendActivity';
     /**
      * Creates a new [SendActivity](xref:botbuilder-dialogs-adaptive.SendActivity) instance.
      * @param activity [Activity](xref:botframework-schema.Activity) or message text to send the user.

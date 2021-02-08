@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class UrlEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.UrlEntityRecognizer';
+    public static readonly $kind = 'Microsoft.UrlEntityRecognizer';
 
     /**
      * @protected

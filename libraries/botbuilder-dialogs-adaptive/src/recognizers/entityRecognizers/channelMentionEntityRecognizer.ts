@@ -13,7 +13,7 @@ import { DialogContext, Recognizer } from 'botbuilder-dialogs';
  * Recognizer which maps channel activity.entities of type mention into [RecognizerResult](xref:botbuilder-core.RecognizerResult) format.
  */
 export class ChannelMentionEntityRecognizer extends Recognizer {
-    public static $kind = 'Microsoft.ChannelMentionEntityRecognizer';
+    public static readonly $kind = 'Microsoft.ChannelMentionEntityRecognizer';
 
     /**
      * To recognize intents and entities in a users utterance.

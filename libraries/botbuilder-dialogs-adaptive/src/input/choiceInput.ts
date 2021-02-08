@@ -52,7 +52,7 @@ export interface ChoiceInputConfiguration extends InputDialogConfiguration {
  * ChoiceInput - Declarative input to gather choices from user.
  */
 export class ChoiceInput extends InputDialog implements ChoiceInputConfiguration {
-    public static $kind = 'Microsoft.ChoiceInput';
+    public static readonly $kind = 'Microsoft.ChoiceInput';
 
     /**
      * Default options for rendering the choices to the user based on locale.

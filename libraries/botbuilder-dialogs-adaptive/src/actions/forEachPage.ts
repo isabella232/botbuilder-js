@@ -38,7 +38,7 @@ export interface ForEachPageConfiguration extends ActionScopeConfiguration {
  * `GotoDialog` action.
  */
 export class ForEachPage<O extends object = {}> extends ActionScope<O> implements ForEachPageConfiguration {
-    public static $kind = 'Microsoft.ForeachPage';
+    public static readonly $kind = 'Microsoft.ForeachPage';
 
     public constructor();
 

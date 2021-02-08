@@ -16,7 +16,7 @@ import { ActionChangeType } from '../actionChangeType';
  * Actions triggered when an error event has been emitted.
  */
 export class OnError extends OnDialogEvent {
-    public static $kind = 'Microsoft.OnError';
+    public static readonly $kind = 'Microsoft.OnError';
 
     /**
      * Initializes a new instance of the [OnError](xref:botbuilder-dialogs-adaptive.OnError) class.

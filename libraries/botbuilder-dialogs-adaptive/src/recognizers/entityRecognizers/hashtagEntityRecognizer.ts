@@ -15,7 +15,7 @@ import { TextEntityRecognizer } from './textEntityRecognizer';
  */
 export class HashtagEntityRecognizer extends TextEntityRecognizer {
 
-    public static $kind = 'Microsoft.HashtagEntityRecognizer';
+    public static readonly $kind = 'Microsoft.HashtagEntityRecognizer';
 
     /**
      * @protected

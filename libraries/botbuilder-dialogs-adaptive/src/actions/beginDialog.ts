@@ -32,7 +32,7 @@ export interface BeginDialogConfiguration extends BaseInvokeDialogConfiguration 
  * Action which begins executing another [Dialog](xref:botbuilder-dialogs.Dialog), when it is done, it will return to the caller.
  */
 export class BeginDialog<O extends object = {}> extends BaseInvokeDialog<O> implements BeginDialogConfiguration {
-    public static $kind = 'Microsoft.BeginDialog';
+    public static readonly $kind = 'Microsoft.BeginDialog';
 
     /**
      * Creates a new `BeginDialog` instance.

@@ -45,7 +45,7 @@ export interface EditArrayConfiguration extends DialogConfiguration {
  * Lets you modify an array in memory.
  */
 export class EditArray<O extends object = {}> extends Dialog<O> implements EditArrayConfiguration {
-    public static $kind = 'Microsoft.EditArray';
+    public static readonly $kind = 'Microsoft.EditArray';
 
     public constructor();
 

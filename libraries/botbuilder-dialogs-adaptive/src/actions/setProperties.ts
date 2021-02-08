@@ -56,7 +56,7 @@ export interface SetPropertiesConfiguration extends DialogConfiguration {
  * Sets properties with the result of evaluating a value expression.
  */
 export class SetProperties<O extends object = {}> extends Dialog<O> implements SetPropertiesConfiguration {
-    public static $kind = 'Microsoft.SetProperties';
+    public static readonly $kind = 'Microsoft.SetProperties';
 
     public constructor();
 

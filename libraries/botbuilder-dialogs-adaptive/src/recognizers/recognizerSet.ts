@@ -15,7 +15,7 @@ export interface RecognizerSetConfiguration extends RecognizerConfiguration {
 }
 
 export class RecognizerSet extends Recognizer implements RecognizerSetConfiguration {
-    public static $kind = 'Microsoft.RecognizerSet';
+    public static readonly $kind = 'Microsoft.RecognizerSet';
 
     public recognizers: Recognizer[] = [];
 

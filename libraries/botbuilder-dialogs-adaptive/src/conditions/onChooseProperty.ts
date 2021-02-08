@@ -19,7 +19,7 @@ export interface OnChoosePropertyConfiguration extends OnDialogEventConfiguratio
  * Triggered to choose which property an entity goes to.
  */
 export class OnChooseProperty extends OnDialogEvent implements OnChoosePropertyConfiguration {
-    public static $kind = 'Microsoft.OnChooseProperty';
+    public static readonly $kind = 'Microsoft.OnChooseProperty';
 
     /**
      * Initializes a new instance of the [OnChooseProperty](xref:botbuilder-dialogs-adaptive.OnChooseProperty) class.

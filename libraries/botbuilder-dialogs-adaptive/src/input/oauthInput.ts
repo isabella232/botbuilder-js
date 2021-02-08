@@ -81,7 +81,7 @@ export interface OAuthInputConfiguration extends InputDialogConfiguration {
  * OAuthInput prompts user to login.
  */
 export class OAuthInput extends InputDialog implements OAuthInputConfiguration {
-    public static $kind = 'Microsoft.OAuthInput';
+    public static readonly $kind = 'Microsoft.OAuthInput';
 
     /**
      * Name of the OAuth connection being used.

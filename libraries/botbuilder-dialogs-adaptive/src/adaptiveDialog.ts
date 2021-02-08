@@ -70,7 +70,7 @@ export interface AdaptiveDialogConfiguration extends DialogConfiguration {
  * The Adaptive Dialog models conversation using events and events to adapt dynamically to changing conversation flow.
  */
 export class AdaptiveDialog<O extends object = {}> extends DialogContainer<O> implements AdaptiveDialogConfiguration {
-    public static $kind = 'Microsoft.AdaptiveDialog';
+    public static readonly $kind = 'Microsoft.AdaptiveDialog';
     public static conditionTracker = 'dialog._tracker.conditions';
 
     private readonly adaptiveKey = '_adaptive';

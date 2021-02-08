@@ -27,7 +27,7 @@ export interface ConditionalSelectorConfiguration extends TriggerSelectorConfigu
  * Select between two rule selectors based on a condition.
  */
 export class ConditionalSelector extends TriggerSelector implements ConditionalSelectorConfiguration {
-    public static $kind = 'Microsoft.ConditionalSelector';
+    public static readonly $kind = 'Microsoft.ConditionalSelector';
 
     private _conditionals: OnCondition[];
     private _evaluate: boolean;

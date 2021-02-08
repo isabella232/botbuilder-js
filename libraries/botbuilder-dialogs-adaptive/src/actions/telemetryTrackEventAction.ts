@@ -54,7 +54,7 @@ export interface TelemetryTrackEventActionConfiguration extends DialogConfigurat
 export class TelemetryTrackEventAction<O extends object = {}>
     extends Dialog
     implements TelemetryTrackEventActionConfiguration {
-    public static $kind = 'Microsoft.TelemetryTrackEventAction';
+    public static readonly $kind = 'Microsoft.TelemetryTrackEventAction';
 
     /**
      * Initializes a new instance of the [TelemetryTrackEventAction](xref:botbuilder-dialogs-adaptive.TelemetryTrackEventAction) class.

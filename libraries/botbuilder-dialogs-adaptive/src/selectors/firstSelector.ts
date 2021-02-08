@@ -14,7 +14,7 @@ import { ActionContext } from '../actionContext';
  * Select the first true rule implementation of TriggerSelector
  */
 export class FirstSelector extends TriggerSelector {
-    public static $kind = 'Microsoft.FirstSelector';
+    public static readonly $kind = 'Microsoft.FirstSelector';
 
     private _conditionals: OnCondition[];
     private _evaluate: boolean;

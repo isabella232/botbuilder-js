@@ -40,7 +40,7 @@ export interface UpdateActivityConfiguration extends DialogConfiguration {
  * Update an activity with replacement.
  */
 export class UpdateActivity<O extends object = {}> extends Dialog<O> implements UpdateActivityConfiguration {
-    public static $kind = 'Microsoft.UpdateActivity';
+    public static readonly $kind = 'Microsoft.UpdateActivity';
 
     public constructor();
 
