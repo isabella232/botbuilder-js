@@ -92,11 +92,11 @@ export class InternalFunctionUtils {
                             result = arr.sort();
                         }
                     } else {
-                        let propertyName: string;
-                        ({ value: propertyName, error } = expression.children[1].tryEvaluate(state, options));
+                        const child1 = expression.children[1].tryEvaluate(state, options);
 
-                        if (!error) {
-                            propertyName = propertyName || '';
+                        let propertyName: string;
+                        if (!child1.error) {
+                            propertyName = (child1.value as string) || '';
                         }
                         if (isDescending) {
                             result = sortBy(arr, propertyName).reverse();
@@ -357,7 +357,7 @@ export class InternalFunctionUtils {
             const { value: r, error: e } = expression.children[2].tryEvaluate(stackedMemory, options);
             stackedMemory.pop();
 
-            const shouldBreak = callback(currentItem, r, e);
+            const shouldBreak = callback(currentItem, r as U, e);
             if (shouldBreak) {
                 break;
             }

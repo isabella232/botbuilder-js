@@ -16,7 +16,7 @@ import {
 import { ExpressionType } from './expressionType';
 import { Extensions } from './extensions';
 import { FunctionTable } from './functionTable';
-import { MemoryInterface, MemoryInterface, SimpleObjectMemory } from './memory';
+import { MemoryInterface, SimpleObjectMemory } from './memory';
 import { Options } from './options';
 import { ExpressionParser } from './parser';
 import { ReturnType } from './returnType';

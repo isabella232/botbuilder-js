@@ -35,7 +35,7 @@ export class AddProperty extends ExpressionEvaluator {
                     return { value: undefined, error: `${args[0]} is not a valid object.` };
                 }
 
-                const temp: Record<string, unknown> = (args[0] as Record<string, unknown>) ?? {};
+                const temp: Record<string, unknown> = args[0] as Record<string, unknown>;
                 const prop = String(args[1]);
                 if (prop in temp) {
                     error = `${prop} already exists`;

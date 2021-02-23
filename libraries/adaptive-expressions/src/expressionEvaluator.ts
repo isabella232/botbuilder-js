@@ -14,7 +14,7 @@ import { ReturnType } from './returnType';
  * Delegate for doing static validation on an expression.
  * Validators can and should throw exceptions if the expression is not valid.
  */
-export type ValidateExpressionDelegate = (expression: Expression) => unknown;
+export type ValidateExpressionDelegate = (expression: Expression) => void;
 
 /**
  * Value result with error.
@@ -30,7 +30,7 @@ export type ValueWithError = {
  */
 export type EvaluateExpressionDelegate = (
     expression: Expression,
-    state: MemoryInterface,
+    state: MemoryInterface | Record<string, unknown>,
     options: Options
 ) => ValueWithError;
 

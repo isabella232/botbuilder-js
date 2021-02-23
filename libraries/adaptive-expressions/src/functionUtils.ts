@@ -705,7 +705,7 @@ export class FunctionUtils {
                     return { path: undefined, left: undefined, error };
                 }
 
-                if (FunctionUtils.isNumber(parseInt(value))) {
+                if (FunctionUtils.isNumber(parseInt(value as string))) {
                     path = `[${value}].${path}`;
                 } else if (typeof value === 'string') {
                     path = `['${value}'].${path}`;

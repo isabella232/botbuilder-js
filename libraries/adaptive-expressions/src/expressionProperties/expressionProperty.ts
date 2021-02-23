@@ -86,7 +86,7 @@ export class ExpressionProperty<T> {
      * @param data Data to use for expression binding.
      * @returns The value.
      */
-    public getValue(data: object): T {
+    public getValue(data: Record<string, unknown> | MemoryInterface): T {
         const { value, error } = this.tryGetValue(data);
         if (error) {
             throw error;
