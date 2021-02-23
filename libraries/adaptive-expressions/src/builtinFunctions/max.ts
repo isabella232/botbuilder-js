@@ -26,7 +26,7 @@ export class Max extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.apply((args: any[]): number => {
+        return FunctionUtils.apply((args: unknown[]): number => {
             let result = Number.NEGATIVE_INFINITY;
             if (args.length === 1) {
                 if (Array.isArray(args[0])) {
@@ -34,7 +34,7 @@ export class Max extends ExpressionEvaluator {
                         result = Math.max(result, value);
                     }
                 } else {
-                    result = Math.max(result, args[0]);
+                    result = Math.max(result, args[0] as number);
                 }
             } else {
                 for (const arg of args) {
@@ -43,7 +43,7 @@ export class Max extends ExpressionEvaluator {
                             result = Math.max(result, value);
                         }
                     } else {
-                        result = Math.max(result, arg);
+                        result = Math.max(result, arg as number);
                     }
                 }
             }

@@ -6,7 +6,7 @@
  * Licensed under the MIT License.
  */
 
-import { ExpressionEvaluator } from '../expressionEvaluator';
+import { ExpressionEvaluator, ValueWithError } from '../expressionEvaluator';
 import { Expression } from '../expression';
 import { ReturnType } from '../returnType';
 import { ExpressionType } from '../expressionType';
@@ -45,7 +45,7 @@ export class GetNextViableDate extends ExpressionEvaluator {
         expr: Expression,
         state: MemoryInterface,
         options: Options
-    ): { value: any; error: string } {
+    ): ValueWithError {
         let parsed: TimexProperty;
         const currentTime = dayjs(new Date().toISOString());
         let validYear = 0;

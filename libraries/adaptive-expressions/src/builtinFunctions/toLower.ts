@@ -32,7 +32,7 @@ export class ToLower extends StringTransformEvaluator {
         locale = FunctionUtils.determineLocale(args, 2, locale);
         const firstArg = args[0];
         if (typeof firstArg === 'string' || firstArg === undefined) {
-            return (InternalFunctionUtils.parseStringOrUndefined(firstArg) as any).toLocaleLowerCase(locale);
+            return InternalFunctionUtils.parseStringOrUndefined(firstArg).toLocaleLowerCase(locale);
         }
     }
 }

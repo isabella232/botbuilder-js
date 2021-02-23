@@ -10,6 +10,7 @@ import { Expression } from '../expression';
 import { ExpressionEvaluator, ValueWithError } from '../expressionEvaluator';
 import { ExpressionType } from '../expressionType';
 import { FunctionUtils } from '../functionUtils';
+import { MemoryInterface } from '../memory/memoryInterface';
 import { Options } from '../options';
 import { ReturnType } from '../returnType';
 
@@ -27,17 +28,22 @@ export class SubArray extends ExpressionEvaluator {
     /**
      * @private
      */
-    private static evaluator(expression: Expression, state: any, options: Options): ValueWithError {
-        let result: any;
+    private static evaluator(
+        expression: Expression,
+        state: MemoryInterface | Record<string, unknown>,
+        options: Options
+    ): ValueWithError {
+        let result: unknown;
         const { value: arr, error: childrenError } = expression.children[0].tryEvaluate(state, options);
         let error = childrenError;
 
         if (!error) {
             if (Array.isArray(arr)) {
-                let start: number;
-
                 const startExpr: Expression = expression.children[1];
-                ({ value: start, error } = startExpr.tryEvaluate(state, options));
+                const startEvaluateResult = startExpr.tryEvaluate(state, options);
+                const start = startEvaluateResult.value as number;
+                error = startEvaluateResult.error;
+
                 if (!error && !Number.isInteger(start)) {
                     error = `${startExpr} is not an integer.`;
                 } else if (start < 0 || start >= arr.length) {
@@ -49,7 +55,10 @@ export class SubArray extends ExpressionEvaluator {
                         end = arr.length;
                     } else {
                         const endExpr: Expression = expression.children[2];
-                        ({ value: end, error } = endExpr.tryEvaluate(state, options));
+                        const endEvaluateResult = endExpr.tryEvaluate(state, options);
+                        const end = endEvaluateResult.value as number;
+                        error = endEvaluateResult.error;
+
                         if (!error && !Number.isInteger(end)) {
                             error = `${endExpr} is not an integer`;
                         } else if (end < 0 || end > arr.length) {

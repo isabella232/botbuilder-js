@@ -54,7 +54,7 @@ export class FormatTicks extends ExpressionEvaluator {
                         .toJSNumber();
                 }
 
-                let value: any;
+                let value: unknown;
                 if (!error) {
                     ({ format, locale } = FunctionUtils.determineFormatAndLocale(args, 3, format, locale));
                     if (typeof arg === 'number') {

@@ -30,15 +30,19 @@ export class LastIndexOf extends ExpressionEvaluator {
     /**
      * @private
      */
-    private static evaluator(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
+    private static evaluator(
+        expression: Expression,
+        state: MemoryInterface | Record<string, unknown>,
+        options: Options
+    ): ValueWithError {
         let value = -1;
         const { args, error: childrenError } = FunctionUtils.evaluateChildren(expression, state, options);
         let error = childrenError;
         if (!error) {
             if (args[0] == undefined || typeof args[0] === 'string') {
                 if (args[1] === undefined || typeof args[1] === 'string') {
-                    const str = InternalFunctionUtils.parseStringOrUndefined(args[0]);
-                    const searchValue = InternalFunctionUtils.parseStringOrUndefined(args[1]);
+                    const str = InternalFunctionUtils.parseStringOrUndefined(args[0] as string);
+                    const searchValue = InternalFunctionUtils.parseStringOrUndefined(args[1] as string);
                     value = str.lastIndexOf(searchValue, str.length - 1);
                 } else {
                     error = `Can only look for indexof string in ${expression}`;

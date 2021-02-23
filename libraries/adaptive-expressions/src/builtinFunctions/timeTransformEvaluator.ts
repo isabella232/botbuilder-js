@@ -35,7 +35,7 @@ export class TimeTransformEvaluator extends ExpressionEvaluator {
      */
     private static evaluator(func: (timestamp: Date, numOfTransformation: number) => Date): EvaluateExpressionDelegate {
         return (expression: Expression, state: MemoryInterface, options: Options): ValueWithError => {
-            let result: any;
+            let result: unknown;
             let locale = options.locale ? options.locale : Intl.DateTimeFormat().resolvedOptions().locale;
             let format = FunctionUtils.DefaultDateTimeFormat;
             const { args, error: childrenError } = FunctionUtils.evaluateChildren(expression, state, options);

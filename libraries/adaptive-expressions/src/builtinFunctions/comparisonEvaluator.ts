@@ -31,7 +31,7 @@ export class ComparisonEvaluator extends ExpressionEvaluator {
      */
     public constructor(
         type: string,
-        func: (arg0: any[]) => boolean,
+        func: (arg0: unknown[]) => boolean,
         validator: ValidateExpressionDelegate,
         verify?: VerifyExpression
     ) {
@@ -41,7 +41,10 @@ export class ComparisonEvaluator extends ExpressionEvaluator {
     /**
      * @private
      */
-    private static evaluator(func: (args: any[]) => boolean, verify?: VerifyExpression): EvaluateExpressionDelegate {
+    private static evaluator(
+        func: (args: unknown[]) => boolean,
+        verify?: VerifyExpression
+    ): EvaluateExpressionDelegate {
         return (expression: Expression, state: MemoryInterface, options: Options): ValueWithError => {
             let result = false;
 

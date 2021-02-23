@@ -36,7 +36,7 @@ export class ConvertFromUTC extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
-        let value: any;
+        let value: unknown;
         let locale = options.locale ? options.locale : Intl.DateTimeFormat().resolvedOptions().locale;
         let format = ConvertFromUTC.NoneUtcDefaultDateTimeFormat;
         const { args, error: childrenError } = FunctionUtils.evaluateChildren(expression, state, options);

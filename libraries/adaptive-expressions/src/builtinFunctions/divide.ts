@@ -25,14 +25,14 @@ export class Divide extends MultivariateNumericEvaluator {
     /**
      * @private
      */
-    private static func(args: any[]): number {
+    private static func(args: unknown[]): number {
         return Math.floor(Number(args[0]) / Number(args[1]));
     }
 
     /**
      * @private
      */
-    private static verify(val: any, expression: Expression, pos: number): string {
+    private static verify(val: unknown, expression: Expression, pos: number): string {
         let error: string = FunctionUtils.verifyNumber(val, expression, pos);
 
         if (!error && pos > 0 && Number(val) === 0) {

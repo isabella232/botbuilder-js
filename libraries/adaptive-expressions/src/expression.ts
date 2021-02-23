@@ -16,7 +16,7 @@ import {
 import { ExpressionType } from './expressionType';
 import { Extensions } from './extensions';
 import { FunctionTable } from './functionTable';
-import { MemoryInterface, SimpleObjectMemory } from './memory';
+import { MemoryInterface, MemoryInterface, SimpleObjectMemory } from './memory';
 import { Options } from './options';
 import { ExpressionParser } from './parser';
 import { ReturnType } from './returnType';
@@ -271,14 +271,14 @@ export class Expression {
      * @param func ambda expression to evaluate.
      * @returns New expression.
      */
-    public static lambda(func: (arg0: any) => any): Expression {
+    public static lambda(func: (arg0: unknown) => unknown): Expression {
         return new Expression(
             ExpressionType.Lambda,
             new ExpressionEvaluator(
                 ExpressionType.Lambda,
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                (_expression: Expression, state: any, _: Options): ValueWithError => {
-                    let value: any;
+                (_expression: Expression, state: MemoryInterface, _: Options): ValueWithError => {
+                    let value: unknown;
                     let error: string;
                     try {
                         value = func(state);
@@ -298,7 +298,7 @@ export class Expression {
      * @param value value expression.
      * @returns New expression.
      */
-    public static setPathToValue(property: Expression, value: any): Expression {
+    public static setPathToValue(property: Expression, value: unknown): Expression {
         if (value instanceof Expression) {
             return Expression.makeExpression(ExpressionType.SetPathToValue, undefined, property, value);
         } else {
@@ -371,7 +371,7 @@ export class Expression {
      * Global state to evaluate accessor expressions against.  Can Dictionary be otherwise reflection is used to access property and then indexer.
      * @param state
      */
-    public tryEvaluate(state: MemoryInterface | any, options: Options = undefined): ValueWithError {
+    public tryEvaluate(state: MemoryInterface | Record<string, unknown>, options: Options = undefined): ValueWithError {
         if (!Extensions.isMemoryInterface(state)) {
             state = SimpleObjectMemory.wrap(state);
         }
@@ -390,7 +390,7 @@ export class Expression {
         // Special support for memory paths
         if (this.type === ExpressionType.Accessor && this.children.length >= 1) {
             if (this.children[0] instanceof Constant) {
-                const prop: any = (this.children[0] as Constant).value;
+                const prop: unknown = (this.children[0] as Constant).value;
                 if (typeof prop === 'string') {
                     if (this.children.length === 1) {
                         valid = true;

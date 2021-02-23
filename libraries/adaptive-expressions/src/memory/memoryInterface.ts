@@ -16,7 +16,7 @@ export interface MemoryInterface {
      * @param path memory path.
      * @returns value.
      */
-    getValue(path: string): any;
+    getValue(path: string): unknown;
 
     /**
      * Set value to a given path.
@@ -24,7 +24,7 @@ export interface MemoryInterface {
      * @param value value to set.
      * @returns value
      */
-    setValue(path: string, value: any): void;
+    setValue(path: string, value: unknown): void;
 
     /**
      * Version is used to identify whether the a particular memory instance has been updated or not.

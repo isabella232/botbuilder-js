@@ -31,7 +31,7 @@ export class SentenceCase extends StringTransformEvaluator {
         locale = FunctionUtils.determineLocale(args, 2, locale);
         const firstArg = args[0];
         if (typeof firstArg === 'string' || firstArg === undefined) {
-            const inputStr = (InternalFunctionUtils.parseStringOrUndefined(firstArg) as any).toLocaleLowerCase(locale);
+            const inputStr = InternalFunctionUtils.parseStringOrUndefined(firstArg).toLocaleLowerCase(locale);
             if (inputStr === '') {
                 return inputStr;
             } else {

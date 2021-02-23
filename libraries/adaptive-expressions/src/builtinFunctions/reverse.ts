@@ -7,7 +7,7 @@
  */
 
 import { Expression } from '../expression';
-import { EvaluateExpressionDelegate, ExpressionEvaluator } from '../expressionEvaluator';
+import { EvaluateExpressionDelegate, ExpressionEvaluator, ValueWithError } from '../expressionEvaluator';
 import { ExpressionType } from '../expressionType';
 import { FunctionUtils } from '../functionUtils';
 import { ReturnType } from '../returnType';
@@ -27,7 +27,7 @@ export class Reverse extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: any[]): any => {
+        return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
             let value = undefined;
             let error = undefined;
             if (typeof args[0] === 'string') {

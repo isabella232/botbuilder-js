@@ -33,7 +33,7 @@ export class GetPastTime extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
-        let value: any;
+        let value: unknown;
         let locale = options.locale ? options.locale : Intl.DateTimeFormat().resolvedOptions().locale;
         let format = FunctionUtils.DefaultDateTimeFormat;
         const { args, error: childrenError } = FunctionUtils.evaluateChildren(expression, state, options);
@@ -41,7 +41,7 @@ export class GetPastTime extends ExpressionEvaluator {
         if (!error) {
             if (Number.isInteger(args[0]) && typeof args[1] === 'string') {
                 ({ format, locale } = FunctionUtils.determineFormatAndLocale(args, 4, format, locale));
-                const { duration, tsStr } = InternalFunctionUtils.timeUnitTransformer(args[0], args[1]);
+                const { duration, tsStr } = InternalFunctionUtils.timeUnitTransformer(args[0] as number, args[1]);
                 if (tsStr === undefined) {
                     error = `${args[2]} is not a valid time unit.`;
                 } else {

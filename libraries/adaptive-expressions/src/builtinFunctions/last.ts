@@ -27,8 +27,8 @@ export class Last extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.apply((args: any[]): any => {
-            let last: any;
+        return FunctionUtils.apply((args: unknown[]): unknown => {
+            let last: unknown;
             if (typeof args[0] === 'string' && args[0].length > 0) {
                 last = args[0][args[0].length - 1];
             }

@@ -30,7 +30,7 @@ export class UriHost extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(expr: Expression, state: MemoryInterface, options: Options): ValueWithError {
-        let value: any;
+        let value: unknown;
         const { args, error: childrenError } = FunctionUtils.evaluateChildren(expr, state, options);
         let error = childrenError;
         if (!error) {

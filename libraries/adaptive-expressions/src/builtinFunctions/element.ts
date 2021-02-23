@@ -31,13 +31,13 @@ export class Element extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
-        let value: any;
+        let value: unknown;
         const instance: Expression = expression.children[0];
         const index: Expression = expression.children[1];
         const { value: inst, error: evalError } = instance.tryEvaluate(state, options);
         let error = evalError;
         if (!error) {
-            let idxValue: any;
+            let idxValue: unknown;
             const newOptions = new Options(options);
             newOptions.nullSubstitution = undefined;
             ({ value: idxValue, error } = index.tryEvaluate(state, newOptions));

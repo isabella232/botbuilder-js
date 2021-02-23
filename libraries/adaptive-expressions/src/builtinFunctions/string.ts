@@ -31,8 +31,8 @@ export class String extends ExpressionEvaluator {
      */
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.applyWithOptionsAndError(
-            (args: any[], options: Options): ValueWithError => {
-                let result: any;
+            (args: unknown[], options: Options): ValueWithError => {
+                let result: string;
                 let error: string;
                 let locale = options.locale ? options.locale : Intl.DateTimeFormat().resolvedOptions().locale;
                 if (!error) {

@@ -6,12 +6,10 @@
  * Licensed under the MIT License.
  */
 
-import { Expression } from '../expression';
 import { ExpressionType } from '../expressionType';
 import { FunctionUtils } from '../functionUtils';
 import { InternalFunctionUtils } from '../functionUtils.internal';
 import { Options } from '../options';
-import { ReturnType } from '../returnType';
 import { StringTransformEvaluator } from './stringTransformEvaluator';
 
 /**
@@ -34,7 +32,7 @@ export class ToUpper extends StringTransformEvaluator {
         locale = FunctionUtils.determineLocale(args, 2, locale);
         const firstArg = args[0];
         if (typeof firstArg === 'string' || firstArg === undefined) {
-            return (InternalFunctionUtils.parseStringOrUndefined(firstArg) as any).toLocaleUpperCase(locale);
+            return InternalFunctionUtils.parseStringOrUndefined(firstArg).toLocaleUpperCase(locale);
         }
     }
 }

@@ -36,11 +36,11 @@ export class Contains extends ExpressionEvaluator {
         let error = childrenError;
         if (!error) {
             if ((typeof args[0] === 'string' && typeof args[1] === 'string') || Array.isArray(args[0])) {
-                found = args[0].includes(args[1]);
+                found = args[0].includes(args[1] as string);
             } else if (args[0] instanceof Map) {
-                found = (args[0] as Map<string, any>).get(args[1]) !== undefined;
+                found = (args[0] as Map<string, unknown>).get(args[1] as string) !== undefined;
             } else if (typeof args[1] === 'string') {
-                let value: any;
+                let value: unknown;
                 ({ value, error } = InternalFunctionUtils.accessProperty(args[0], args[1]));
                 found = !error && value !== undefined;
             }

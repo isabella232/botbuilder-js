@@ -33,7 +33,7 @@ export class AddToTime extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
-        let value: any;
+        let value: unknown;
 
         let locale = options.locale ? options.locale : Intl.DateTimeFormat().resolvedOptions().locale;
         let format = FunctionUtils.DefaultDateTimeFormat;
@@ -43,7 +43,7 @@ export class AddToTime extends ExpressionEvaluator {
         if (!error) {
             ({ format, locale } = FunctionUtils.determineFormatAndLocale(args, 5, format, locale));
             if (typeof args[0] === 'string' && Number.isInteger(args[1]) && typeof args[2] === 'string') {
-                ({ value, error } = AddToTime.evalAddToTime(args[0], args[1], args[2], format, locale));
+                ({ value, error } = AddToTime.evalAddToTime(args[0], args[1] as number, args[2], format, locale));
             } else {
                 error = `${expression} should contain an ISO format timestamp, a time interval integer, a string unit of time and an optional output format string.`;
             }

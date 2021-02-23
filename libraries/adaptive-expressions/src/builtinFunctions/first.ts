@@ -27,8 +27,8 @@ export class First extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.apply((args: any[]): any => {
-            let first: any;
+        return FunctionUtils.apply((args: unknown[]): unknown => {
+            let first: unknown;
             if (typeof args[0] === 'string' && args[0].length > 0) {
                 first = args[0][0];
             }

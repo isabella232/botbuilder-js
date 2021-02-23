@@ -176,13 +176,13 @@ export class Clause extends Expression {
      * @param memory The scope for looking up variables.
      * @returns A boolean value indicating whether the two clauses are matches.
      */
-    public matches(clause: Clause, memory: MemoryInterface | any): boolean {
+    public matches(clause: Clause, memory: MemoryInterface): boolean {
         let matched = false;
         if (clause.deepEquals(this)) {
             matched = true;
             if (this._ignored) {
                 const { value: match, error } = this._ignored.tryEvaluate(memory);
-                matched = !error && match;
+                matched = !error && match != null;
             }
         }
 

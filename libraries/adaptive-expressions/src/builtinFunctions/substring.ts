@@ -29,16 +29,17 @@ export class Substring extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
-        let result: any;
+        let result: unknown;
         const { value: str, error: childrenError } = expression.children[0].tryEvaluate(state, options);
         let error = childrenError;
 
         if (!error) {
             if (typeof str === 'string') {
-                let start: number;
-
                 const startExpr: Expression = expression.children[1];
-                ({ value: start, error } = startExpr.tryEvaluate(state, options));
+                const startEvaluateResult = startExpr.tryEvaluate(state, options);
+                const start = startEvaluateResult.value as number;
+                error = startEvaluateResult.error;
+
                 if (!error && !Number.isInteger(start)) {
                     error = `${startExpr} is not an integer.`;
                 } else if (start < 0 || start >= str.length) {
@@ -51,7 +52,10 @@ export class Substring extends ExpressionEvaluator {
                         length = str.length - start;
                     } else {
                         const lengthExpr: Expression = expression.children[2];
-                        ({ value: length, error } = lengthExpr.tryEvaluate(state, options));
+                        const lengthEvaluateResult = lengthExpr.tryEvaluate(state, options);
+                        const length = lengthEvaluateResult.value as number;
+                        error = lengthEvaluateResult.error;
+
                         if (!error && !Number.isInteger(length)) {
                             error = `${lengthExpr} is not an integer`;
                         } else if (length < 0 || Number(start) + Number(length) > str.length) {

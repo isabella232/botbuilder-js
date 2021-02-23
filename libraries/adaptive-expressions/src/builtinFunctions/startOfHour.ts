@@ -33,7 +33,7 @@ export class StartOfHour extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(expr: Expression, state: MemoryInterface, options: Options): ValueWithError {
-        let value: any;
+        let value: unknown;
         let locale = options.locale ? options.locale : Intl.DateTimeFormat().resolvedOptions().locale;
         let format = FunctionUtils.DefaultDateTimeFormat;
         const { args, error: childrenError } = FunctionUtils.evaluateChildren(expr, state, options);

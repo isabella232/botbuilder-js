@@ -19,14 +19,14 @@ export class Constant extends Expression {
     /**
      * Constant value.
      */
-    public get value(): any {
+    public get value(): unknown {
         return this._value;
     }
 
     /**
      * Sets constant value.
      */
-    public set value(theValue: any) {
+    public set value(theValue: unknown) {
         this.evaluator.returnType =
             typeof theValue === 'string'
                 ? ReturnType.String
@@ -41,14 +41,14 @@ export class Constant extends Expression {
         this._value = theValue;
     }
 
-    private _value: any;
+    private _value: unknown;
 
     /**
      * Initializes a new instance of the [Constant](xref:adaptive-expressions.Constant) class.
      * Constructs an expression constant.
      * @param value Constant value.
      */
-    public constructor(value: any) {
+    public constructor(value: unknown) {
         super(
             ExpressionType.Constant,
             new ExpressionEvaluator(
@@ -91,7 +91,7 @@ export class Constant extends Expression {
             let result = this.value;
 
             result = result.replace(/\\/g, '\\\\');
-            result = this.reverseString(this.reverseString(result).replace(this.singleQuotRegex, (): any => "'\\"));
+            result = this.reverseString(this.reverseString(result).replace(this.singleQuotRegex, () => "'\\"));
             return `'${result}'`;
         } else if (typeof this.value === 'number') {
             return this.value.toString();
