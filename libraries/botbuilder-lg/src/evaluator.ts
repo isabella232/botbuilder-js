@@ -712,7 +712,7 @@ export class Evaluator extends AbstractParseTreeVisitor<unknown> implements LGTe
     };
 
     private readonly templateFunction = () => (args: readonly unknown[]): unknown => {
-        const templateName: string = args[0] as string;
+        const templateName = String(args[0]);
         const newScope = this.constructScope(templateName, args.slice(1));
 
         return this.evaluateTemplate(templateName, newScope);
@@ -730,7 +730,7 @@ export class Evaluator extends AbstractParseTreeVisitor<unknown> implements LGTe
 
         // Validate more if the name is string constant
         if (children0.type === ExpressionType.Constant) {
-            const templateName: string = (children0 as Constant).value as string;
+            const templateName = String((children0 as Constant).value);
             this.checkTemplateReference(templateName, expression.children.slice(1));
         }
     };
