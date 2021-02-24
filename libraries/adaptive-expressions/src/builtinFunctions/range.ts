@@ -32,7 +32,7 @@ export class Range extends ExpressionEvaluator {
                 error = 'Second paramter must be more than zero';
             }
 
-            const result: number[] = [...Array(args[1]).keys()].map((u: number): number => u + Number(args[0]));
+            const result: number[] = [...Array(args[1]).keys()].map((u: number): number => u + (args[0] as number));
 
             return { value: result, error };
         }, FunctionUtils.verifyInteger);

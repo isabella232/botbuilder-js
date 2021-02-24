@@ -36,11 +36,11 @@ export class AddProperty extends ExpressionEvaluator {
                 }
 
                 const temp: Record<string, unknown> = args[0] as Record<string, unknown>;
-                const prop = String(args[1]);
+                const prop = args[1] as string;
                 if (prop in temp) {
                     error = `${prop} already exists`;
                 } else {
-                    temp[String(args[1])] = args[2];
+                    temp[args[1] as string] = args[2];
                 }
 
                 return { value: temp, error };

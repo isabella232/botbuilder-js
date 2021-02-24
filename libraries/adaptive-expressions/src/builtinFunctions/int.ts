@@ -32,7 +32,7 @@ export class Int extends ExpressionEvaluator {
             if (bigInt.isInstance(args[0])) {
                     return { value: (args[0] as bigInt.BigInteger).toJSNumber(), error };
             }
-            const value: number = parseInt(args[0] as string, 10);
+            const value: number = parseInt(String(args[0]), 10);
             if (!FunctionUtils.isNumber(value)) {
                 error = `parameter ${args[0]} is not a valid number string.`;
             }

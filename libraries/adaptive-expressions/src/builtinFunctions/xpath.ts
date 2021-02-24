@@ -97,6 +97,6 @@ export class XPath extends ExpressionEvaluator {
      * @private
      */
     private static validator(expression: Expression): void {
-        FunctionUtils.validateOrder(expression, undefined, ReturnType.Object, ReturnType.String);
+        FunctionUtils.validateOrder(expression, undefined, ReturnType.String, ReturnType.String);
     }
 }

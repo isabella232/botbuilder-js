@@ -96,7 +96,7 @@ export class InternalFunctionUtils {
 
                         let propertyName: string;
                         if (!child1.error) {
-                            propertyName = (child1.value as string) || '';
+                            propertyName = String(child1.value) || '';
                         }
                         if (isDescending) {
                             result = sortBy(arr, propertyName).reverse();

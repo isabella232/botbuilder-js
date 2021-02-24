@@ -58,7 +58,7 @@ export class Substring extends ExpressionEvaluator {
 
                         if (!error && !FunctionUtils.isInteger(length)) {
                             error = `${lengthExpr} is not an integer`;
-                        } else if (length < 0 || Number(start) + Number(length) > str.length) {
+                        } else if (length < 0 || (start as number) + (length as number) > str.length) {
                             error = `${lengthExpr}=${length} which is out of range for ${str}`;
                         }
                     }

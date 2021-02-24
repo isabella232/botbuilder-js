@@ -29,7 +29,7 @@ export class Float extends ExpressionEvaluator {
         return FunctionUtils.applyWithError(
             (args: unknown[]): ValueWithError => {
             let error: string;
-            const value: number = parseFloat(args[0] as string);
+            const value: number = parseFloat(String(args[0]));
             if (!FunctionUtils.isNumber(value)) {
                 error = `parameter ${args[0]} is not a valid number string.`;
             }

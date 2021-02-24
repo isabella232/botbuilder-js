@@ -41,7 +41,9 @@ export class DateTimeDiff extends ExpressionEvaluator {
             if (!error) {
                 error = InternalFunctionUtils.verifyISOTimestamp(args[1]);
                 if (!error) {
-                    value = dayjs(args[0] as string).diff(dayjs(args[1] as string), 'milliseconds') * 10000;
+                    value =
+                        dayjs(args[0] as dayjs.ConfigType).diff(dayjs(args[1] as dayjs.ConfigType), 'milliseconds') *
+                        10000;
                 }
             }
         }

@@ -29,7 +29,7 @@ export class Mod extends ExpressionEvaluator {
         return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
             let error: string;
             let value: number;
-            if (Number(args[1]) === 0) {
+            if ((args[1] as number) === 0) {
                 error = `Cannot mod by 0.`;
             } else {
                 value = (args[0] as number) % (args[1] as number);

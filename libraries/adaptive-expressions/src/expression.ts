@@ -144,7 +144,7 @@ export class Expression {
         if (extension === undefined || !extension(expression)) {
             const children: Expression[] = expression.children;
             if (expression.type === ExpressionType.Accessor) {
-                const prop: string = (children[0] as Constant).value as string;
+                const prop = String((children[0] as Constant).value);
 
                 if (children.length === 1) {
                     path = prop;
@@ -198,7 +198,7 @@ export class Expression {
                     refs2.add(child2Path);
                 }
 
-                const iteratorName = (children[1].children[0] as Constant).value as string;
+                const iteratorName = String((children[1].children[0] as Constant).value);
                 const nonLocalRefs2 = Array.from(refs2).filter(
                     (x): boolean =>
                         !(x === iteratorName || x.startsWith(iteratorName + '.') || x.startsWith(iteratorName + '['))

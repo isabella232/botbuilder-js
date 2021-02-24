@@ -24,6 +24,6 @@ export class Subtract extends MultivariateNumericEvaluator {
      * @private
      */
     private static func(args: unknown[]): number {
-        return Number(args[0]) - Number(args[1]);
+        return (args[0] as number) - (args[1] as number);
     }
 }

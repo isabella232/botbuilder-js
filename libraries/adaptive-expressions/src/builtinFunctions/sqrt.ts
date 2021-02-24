@@ -29,7 +29,7 @@ export class Sqrt extends ExpressionEvaluator {
         return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
             let error: string;
             let value: unknown;
-            const originalNumber = Number(args[0]);
+            const originalNumber = args[0] as number;
             if (originalNumber < 0) {
                 error = 'Do not support square root extraction of negative numbers.';
             } else {

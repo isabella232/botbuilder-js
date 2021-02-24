@@ -29,7 +29,7 @@ export class SetProperty extends ExpressionEvaluator {
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.apply((args: unknown[]): unknown => {
             const temp: Record<string, unknown> = args[0] as Record<string, unknown>;
-            temp[String(args[1])] = args[2];
+            temp[args[1] as string] = args[2];
 
             return temp;
         });

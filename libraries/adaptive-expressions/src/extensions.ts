@@ -47,7 +47,7 @@ export class Extensions {
     public static randomNext(memory: MemoryInterface, min: number, max: number): number {
         const randomValue = memory.getValue('Conversation.TestOptions.randomValue');
         if (randomValue !== undefined) {
-            return min + ((randomValue as number) % (max - min));
+            return min + (Number(randomValue) % (max - min));
         }
 
         return Math.floor(min + Math.random() * (max - min));

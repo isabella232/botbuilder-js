@@ -38,7 +38,7 @@ export class Contains extends ExpressionEvaluator {
             if ((typeof args[0] === 'string' && typeof args[1] === 'string') || Array.isArray(args[0])) {
                 found = (args[0] as string).includes(args[1] as string);
             } else if (args[0] instanceof Map) {
-                found = (args[0] as Map<string, unknown>).get(args[1] as string) !== undefined;
+                found = (args[0] as Map<unknown, unknown>).get(args[1]) !== undefined;
             } else if (typeof args[1] === 'string') {
                 let value: unknown;
                 ({ value, error } = InternalFunctionUtils.accessProperty(args[0], args[1] as string));
