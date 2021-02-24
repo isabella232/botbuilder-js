@@ -53,7 +53,7 @@ export class Substring extends ExpressionEvaluator {
                     } else {
                         const lengthExpr: Expression = expression.children[2];
                         const lengthEvaluateResult = lengthExpr.tryEvaluate(state, options);
-                        const length = lengthEvaluateResult.value;
+                        length = lengthEvaluateResult.value;
                         error = lengthEvaluateResult.error;
 
                         if (!error && !FunctionUtils.isInteger(length)) {

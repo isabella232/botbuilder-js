@@ -56,7 +56,7 @@ export class SubArray extends ExpressionEvaluator {
                     } else {
                         const endExpr: Expression = expression.children[2];
                         const endEvaluateResult = endExpr.tryEvaluate(state, options);
-                        const end = endEvaluateResult.value;
+                        end = endEvaluateResult.value;
                         error = endEvaluateResult.error;
 
                         if (!error && !FunctionUtils.isInteger(end)) {

@@ -28,13 +28,15 @@ export class TitleCase extends StringTransformEvaluator {
         locale = FunctionUtils.determineLocale(args, 2, locale);
         const firstArg = args[0];
         if (typeof firstArg === 'string' || firstArg === undefined) {
-            const inputStr = InternalFunctionUtils.parseStringOrUndefined(firstArg).toLocaleLowerCase(locale);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const inputStr = (InternalFunctionUtils.parseStringOrUndefined(firstArg) as any).toLocaleLowerCase(locale);
             if (inputStr === '') {
                 return inputStr;
             } else {
                 return inputStr.replace(
                     /\w\S*/g,
-                    (txt): string => txt.charAt(0).toUpperCase() + txt.substr(1).toLocaleLowerCase(locale)
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    (txt): string => txt.charAt(0).toUpperCase() + (txt.substr(1) as any).toLocaleLowerCase(locale)
                 );
             }
         }

@@ -31,11 +31,13 @@ export class SentenceCase extends StringTransformEvaluator {
         locale = FunctionUtils.determineLocale(args, 2, locale);
         const firstArg = args[0];
         if (typeof firstArg === 'string' || firstArg === undefined) {
-            const inputStr = InternalFunctionUtils.parseStringOrUndefined(firstArg).toLocaleLowerCase(locale);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const inputStr = (InternalFunctionUtils.parseStringOrUndefined(firstArg) as any).toLocaleLowerCase(locale);
             if (inputStr === '') {
                 return inputStr;
             } else {
-                return inputStr.charAt(0).toUpperCase() + inputStr.substr(1).toLocaleLowerCase(locale);
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                return inputStr.charAt(0).toUpperCase() + (inputStr.substr(1) as any).toLocaleLowerCase(locale);
             }
         }
     }

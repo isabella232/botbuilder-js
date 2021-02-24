@@ -32,7 +32,8 @@ export class ToUpper extends StringTransformEvaluator {
         locale = FunctionUtils.determineLocale(args, 2, locale);
         const firstArg = args[0];
         if (typeof firstArg === 'string' || firstArg === undefined) {
-            return InternalFunctionUtils.parseStringOrUndefined(firstArg).toLocaleUpperCase(locale);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            return (InternalFunctionUtils.parseStringOrUndefined(firstArg) as any).toLocaleUpperCase(locale);
         }
     }
 }
