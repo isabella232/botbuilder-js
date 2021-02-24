@@ -107,7 +107,7 @@ export class ExpressionProperty<T> {
 
         if (this.expression) {
             const result = this.expression.tryEvaluate(data);
-            return { value: result.value as T, error: new Error(result.error) };
+            return { value: result.value as T, error: result.error ? new Error(result.error) : undefined };
         }
 
         return { value: this.value, error: undefined };

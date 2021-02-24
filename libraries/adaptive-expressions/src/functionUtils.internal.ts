@@ -444,7 +444,7 @@ export class InternalFunctionUtils {
      * Equal helper function.
      * @param args Input args. Compare the first param and second param.
      */
-    public static isEqual(args: unknown[]): boolean {
+    public static isEqual(args: readonly unknown[]): boolean {
         if (args.length === 0) {
             return false;
         }

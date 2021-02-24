@@ -27,7 +27,7 @@ export class RemoveProperty extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.apply((args: unknown[]): unknown => {
+        return FunctionUtils.apply((args: readonly unknown[]): unknown => {
             const temp: Record<string, unknown> = args[0] as Record<string, unknown>;
             delete temp[args[1] as string];
 

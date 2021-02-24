@@ -26,7 +26,7 @@ export class Range extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
+        return FunctionUtils.applyWithError((args: readonly unknown[]): ValueWithError => {
             let error: string;
             if (args[1] <= 0) {
                 error = 'Second paramter must be more than zero';

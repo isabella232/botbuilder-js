@@ -27,7 +27,7 @@ export class Count extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.apply((args: unknown[]): number => {
+        return FunctionUtils.apply((args: readonly unknown[]): number => {
             let count: number;
             if (typeof args[0] === 'string' || Array.isArray(args[0])) {
                 count = (args[0] as string).length;

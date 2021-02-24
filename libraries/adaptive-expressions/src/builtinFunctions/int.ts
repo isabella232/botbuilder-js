@@ -27,7 +27,7 @@ export class Int extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
+        return FunctionUtils.applyWithError((args: readonly unknown[]): ValueWithError => {
             let error: string;
             if (bigInt.isInstance(args[0])) {
                     return { value: (args[0] as bigInt.BigInteger).toJSNumber(), error };

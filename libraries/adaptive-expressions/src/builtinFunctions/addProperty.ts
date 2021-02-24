@@ -29,7 +29,7 @@ export class AddProperty extends ExpressionEvaluator {
      */
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.applyWithError(
-            (args: unknown[]): ValueWithError => {
+            (args: readonly unknown[]): ValueWithError => {
                 let error: string;
                 if (typeof args[0] !== 'object') {
                     return { value: undefined, error: `${args[0]} is not a valid object.` };

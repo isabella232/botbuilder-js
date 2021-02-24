@@ -33,7 +33,7 @@ export class DataUriToBinary extends ExpressionEvaluator {
      */
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.apply(
-            (args: unknown[]): Uint8Array => InternalFunctionUtils.toBinary(args[0] as string),
+            (args: readonly unknown[]): Uint8Array => InternalFunctionUtils.toBinary(args[0] as string),
             FunctionUtils.verifyString
         );
     }

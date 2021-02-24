@@ -30,7 +30,7 @@ export class FormatEpoch extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithOptionsAndError((args: unknown[], options: Options): ValueWithError => {
+        return FunctionUtils.applyWithOptionsAndError((args: readonly unknown[], options: Options): ValueWithError => {
             let error: string;
             let arg: unknown = args[0];
             let locale = options.locale ? options.locale : Intl.DateTimeFormat().resolvedOptions().locale;

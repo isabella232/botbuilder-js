@@ -27,7 +27,7 @@ export class Flatten extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.apply((args: unknown[]): unknown[] => {
+        return FunctionUtils.apply((args: readonly unknown[]): unknown[] => {
             const array = args[0] as unknown[];
             const depth = args.length > 1 ? (args[1] as number) : 100;
             return Flatten.evalFlatten(array, depth);

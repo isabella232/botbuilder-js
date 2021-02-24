@@ -27,7 +27,7 @@ export class Reverse extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
+        return FunctionUtils.applyWithError((args: readonly unknown[]): ValueWithError => {
             let value = undefined;
             let error = undefined;
             if (typeof args[0] === 'string') {

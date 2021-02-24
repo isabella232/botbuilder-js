@@ -23,7 +23,7 @@ export class Ceiling extends NumberTransformEvaluator {
     /**
      * @private
      */
-    private static func(args: unknown[]): number {
+    private static func(args: readonly unknown[]): number {
         return Math.ceil(args[0] as number);
     }
 }

@@ -23,7 +23,7 @@ export class TitleCase extends StringTransformEvaluator {
         super(ExpressionType.TitleCase, TitleCase.evaluator, FunctionUtils.validateUnaryOrBinaryString);
     }
 
-    private static evaluator(args: unknown[], options: Options): string {
+    private static evaluator(args: readonly unknown[], options: Options): string {
         let locale = options.locale ? options.locale : Intl.DateTimeFormat().resolvedOptions().locale;
         locale = FunctionUtils.determineLocale(args, 2, locale);
         const firstArg = args[0];

@@ -29,7 +29,7 @@ export class Replace extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
+        return FunctionUtils.applyWithError((args: readonly unknown[]): ValueWithError => {
             let error = undefined;
             let result = undefined;
             if (InternalFunctionUtils.parseStringOrUndefined(args[1] as string).length === 0) {

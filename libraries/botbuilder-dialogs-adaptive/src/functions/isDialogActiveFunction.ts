@@ -52,7 +52,7 @@ export class IsDialogActiveFunction extends ExpressionEvaluator {
                 if (error) {
                     throw error;
                 }
-                return value;
+                return value as string;
             });
             return {
                 value: stack.some((dlg) => args.includes(dlg)),

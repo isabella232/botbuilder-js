@@ -31,7 +31,7 @@ export class TemplateEngineLanguageGenerator<T = unknown, D extends Record<strin
     private lg: Templates;
 
     public id = '';
- 
+
     /**
      * Initializes a new instance of the [TemplateEngineLanguageGenerator](xref:botbuilder-dialogs-adaptive.TemplateEngineLanguageGenerator) class.
      * @param arg1 Optional. An LG [Templates](xref:botbuilder-lg.Templates) or a [Resource](xref:botbuilder-dialogs-declarative.Resource).
@@ -66,7 +66,7 @@ export class TemplateEngineLanguageGenerator<T = unknown, D extends Record<strin
             const lgOptions = new EvaluationOptions();
             lgOptions.locale = dialogContext.getLocale();
             const result = this.lg.evaluateText(template, data, lgOptions);
-            return Promise.resolve(result);
+            return Promise.resolve(result as T);
         } catch (e) {
             if (this.id !== undefined && this.id === '') {
                 throw Error(`${this.id}:${e}`);

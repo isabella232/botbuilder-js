@@ -34,7 +34,7 @@ export class FormatDateTime extends ExpressionEvaluator {
      */
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.applyWithOptionsAndError(
-            (args: unknown[], options: Options): ValueWithError => {
+            (args: readonly unknown[], options: Options): ValueWithError => {
             let error: string;
             let arg: Date | string = args[0] as Date | string;
             let locale = options.locale ? options.locale : Intl.DateTimeFormat().resolvedOptions().locale;

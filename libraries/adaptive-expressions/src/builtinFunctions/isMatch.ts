@@ -29,7 +29,7 @@ export class IsMatch extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
+        return FunctionUtils.applyWithError((args: readonly unknown[]): ValueWithError => {
             let value = false;
             let error: string;
             if (args[0] === undefined || args[0] === '') {

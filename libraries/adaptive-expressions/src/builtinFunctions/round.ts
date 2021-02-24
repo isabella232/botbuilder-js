@@ -26,7 +26,7 @@ export class Round extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
+        return FunctionUtils.applyWithError((args: readonly unknown[]): ValueWithError => {
             let result: unknown;
             let error: string;
             if (args.length === 2 && !FunctionUtils.isInteger(args[1])) {

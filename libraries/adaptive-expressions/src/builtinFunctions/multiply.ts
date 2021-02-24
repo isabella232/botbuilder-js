@@ -23,7 +23,7 @@ export class Multiply extends MultivariateNumericEvaluator {
     /**
      * @private
      */
-    private static func(args: unknown[]): number {
+    private static func(args: readonly unknown[]): number {
         return (args[0] as number) * (args[1] as number);
     }
 }

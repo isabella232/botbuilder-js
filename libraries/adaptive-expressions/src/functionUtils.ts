@@ -462,7 +462,10 @@ export class FunctionUtils {
      * @param verify Function to check each arg for validity.
      * @returns Delegate for evaluating an expression.
      */
-    public static apply(func: (arg0: unknown[]) => unknown, verify?: VerifyExpression): EvaluateExpressionDelegate {
+    public static apply(
+        func: (arg0: readonly unknown[]) => unknown,
+        verify?: VerifyExpression
+    ): EvaluateExpressionDelegate {
         return (expression: Expression, state: MemoryInterface, options: Options): ValueWithError => {
             let value: unknown;
             const { args, error: childrenError } = FunctionUtils.evaluateChildren(expression, state, options, verify);
@@ -486,7 +489,7 @@ export class FunctionUtils {
      * @returns Delegate for evaluating an expression.
      */
     public static applyWithError(
-        func: (arg0: unknown[]) => ValueWithError,
+        func: (arg0: readonly unknown[]) => ValueWithError,
         verify?: VerifyExpression
     ): EvaluateExpressionDelegate {
         return (expression: Expression, state: MemoryInterface, options: Options): ValueWithError => {
@@ -512,7 +515,7 @@ export class FunctionUtils {
      * @returns Delegate for evaluating an expression.
      */
     public static applyWithOptionsAndError(
-        func: (arg0: unknown[], options: Options) => { value: unknown; error: string },
+        func: (arg0: readonly unknown[], options: Options) => { value: unknown; error: string },
         verify?: VerifyExpression
     ): EvaluateExpressionDelegate {
         return (expression: Expression, state: MemoryInterface, options: Options): ValueWithError => {
@@ -538,7 +541,7 @@ export class FunctionUtils {
      * @returns Delegate for evaluating an expression.
      */
     public static applyWithOptions(
-        func: (arg0: unknown[], options: Options) => unknown,
+        func: (arg0: readonly unknown[], options: Options) => unknown,
         verify?: VerifyExpression
     ): EvaluateExpressionDelegate {
         return (expression: Expression, state: MemoryInterface, options: Options): ValueWithError => {
@@ -564,10 +567,10 @@ export class FunctionUtils {
      * @returns Delegate for evaluating an expression.
      */
     public static applySequence(
-        func: (arg0: unknown[]) => unknown,
+        func: (arg0: readonly unknown[]) => unknown,
         verify?: VerifyExpression
     ): EvaluateExpressionDelegate {
-        return FunctionUtils.apply((args: unknown[]): unknown => {
+        return FunctionUtils.apply((args: readonly unknown[]): unknown => {
             const binaryArgs: unknown[] = [undefined, undefined];
             let soFar: unknown = args[0];
             for (let i = 1; i < args.length; i++) {
@@ -587,10 +590,10 @@ export class FunctionUtils {
      * @returns Delegate for evaluating an expression.
      */
     public static applySequenceWithError(
-        func: (arg0: unknown[]) => ValueWithError,
+        func: (arg0: readonly unknown[]) => ValueWithError,
         verify?: VerifyExpression
     ): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
+        return FunctionUtils.applyWithError((args: readonly unknown[]): ValueWithError => {
             const binaryArgs: unknown[] = [undefined, undefined];
             let soFar: unknown = args[0];
             let value: unknown;
@@ -616,7 +619,7 @@ export class FunctionUtils {
      * @param locale A locale string
      * @param maxArgsLength The max length of a given function.
      */
-    public static determineLocale(args: unknown[], maxArgsLength: number, locale = 'en-us'): string {
+    public static determineLocale(args: readonly unknown[], maxArgsLength: number, locale = 'en-us'): string {
         if (args.length === maxArgsLength) {
             const lastArg = args[maxArgsLength - 1];
             if (typeof lastArg === 'string') {
@@ -635,7 +638,7 @@ export class FunctionUtils {
      * @param maxArgsLength The max length of a given function.
      */
     public static determineFormatAndLocale(
-        args: unknown[],
+        args: readonly unknown[],
         maxArgsLength: number,
         format: string,
         locale = 'en-us'

@@ -27,7 +27,7 @@ export class Add extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applySequenceWithError((args: unknown[]): ValueWithError => {
+        return FunctionUtils.applySequenceWithError((args: readonly unknown[]): ValueWithError => {
             let value: unknown;
             let error: string;
             const stringConcat = !FunctionUtils.isNumber(args[0]) || !FunctionUtils.isNumber(args[1]);

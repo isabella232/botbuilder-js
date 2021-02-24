@@ -26,7 +26,7 @@ export class Mod extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
+        return FunctionUtils.applyWithError((args: readonly unknown[]): ValueWithError => {
             let error: string;
             let value: number;
             if ((args[1] as number) === 0) {

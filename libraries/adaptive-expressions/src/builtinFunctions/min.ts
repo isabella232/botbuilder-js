@@ -26,7 +26,7 @@ export class Min extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.apply((args: unknown[]): number => {
+        return FunctionUtils.apply((args: readonly unknown[]): number => {
             let result = Number.POSITIVE_INFINITY;
             if (args.length === 1) {
                 if (Array.isArray(args[0])) {

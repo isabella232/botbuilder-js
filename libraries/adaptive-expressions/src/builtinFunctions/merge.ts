@@ -28,7 +28,7 @@ export class Merge extends ExpressionEvaluator {
      */
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.applySequenceWithError(
-            (args: unknown[]): ValueWithError => {
+            (args: readonly unknown[]): ValueWithError => {
             let value: unknown;
             let error: string;
             if (

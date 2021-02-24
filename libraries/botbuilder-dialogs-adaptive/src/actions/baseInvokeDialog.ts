@@ -66,7 +66,7 @@ export class BaseInvokeDialog<O extends object = {}>
     public getConverter(property: keyof BaseInvokeDialogConfiguration): Converter | ConverterFactory {
         switch (property) {
             case 'options':
-                return new ObjectExpressionConverter<object>();
+                return new ObjectExpressionConverter<Record<string, unknown>>();
             case 'dialog':
                 return DialogExpressionConverter;
             case 'activityProcessed':
@@ -119,7 +119,7 @@ export class BaseInvokeDialog<O extends object = {}>
 
         const expression = this.dialog.toExpression();
         const { value: dialogId } = expression.tryEvaluate(dc.state);
-        const dialog = dc.findDialog(dialogId);
+        const dialog = dc.findDialog(dialogId as string);
         if (!dialog) {
             throw new Error(`${this.dialog.toString()} not found.`);
         }

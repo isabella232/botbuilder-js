@@ -30,7 +30,7 @@ export class Intersection extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.apply((args: unknown[]): unknown => {
+        return FunctionUtils.apply((args: readonly unknown[]): unknown => {
             let result = args[0] as unknown[];
             for (const arg of args) {
                 result = result.filter((e): boolean => (arg as unknown[]).indexOf(e) > -1);

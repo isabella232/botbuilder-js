@@ -30,7 +30,7 @@ export class StartsWith extends ExpressionEvaluator {
      */
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.apply(
-            (args: unknown[]): boolean =>
+            (args: readonly unknown[]): boolean =>
                 InternalFunctionUtils.parseStringOrUndefined(args[0] as string).startsWith(
                     InternalFunctionUtils.parseStringOrUndefined(args[1] as string)
                 ),

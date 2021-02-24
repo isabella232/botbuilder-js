@@ -31,7 +31,7 @@ export class Concat extends ExpressionEvaluator {
      * @private
      */
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applySequence((args: unknown[]): unknown => {
+        return FunctionUtils.applySequence((args: readonly unknown[]): unknown => {
             const firstItem = args[0];
             const secondItem = args[1];
             const isFirstList = Array.isArray(firstItem);

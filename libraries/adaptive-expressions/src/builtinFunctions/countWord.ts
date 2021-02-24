@@ -28,7 +28,7 @@ export class CountWord extends ExpressionEvaluator {
      */
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.apply(
-            (args: unknown[]): number =>
+            (args: readonly unknown[]): number =>
                 InternalFunctionUtils.parseStringOrUndefined(args[0] as string)
                     .trim()
                     .split(/\s+/).length,

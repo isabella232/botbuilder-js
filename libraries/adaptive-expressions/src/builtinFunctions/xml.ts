@@ -24,10 +24,10 @@ export class XML extends ExpressionEvaluator {
     }
 
     private static evaluator(): EvaluateExpressionDelegate {
-        return FunctionUtils.applyWithError((args: unknown[]): { value: unknown; error: string } => XML.platformSpecificXML(args));
+        return FunctionUtils.applyWithError((args: readonly unknown[]): { value: unknown; error: string } => XML.platformSpecificXML(args));
     }
 
-    private static platformSpecificXML(args: unknown[]): { value: unknown; error: string } {
+    private static platformSpecificXML(args: readonly unknown[]): { value: unknown; error: string } {
         if (typeof window !== 'undefined' || typeof self !== 'undefined') {
             // this is for evaluating in browser environment, however it is not covered by any test currently
             // x2js package can run on browser environment, see ref: https://www.npmjs.com/package/x2js

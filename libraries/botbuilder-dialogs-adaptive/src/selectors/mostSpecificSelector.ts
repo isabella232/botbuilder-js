@@ -34,7 +34,7 @@ export class MostSpecificSelector extends TriggerSelector implements MostSpecifi
 
     public async select(context: ActionContext): Promise<OnCondition[]> {
         const triggers = this._tree.matches(context.state);
-        const matches: OnCondition[] = triggers.map((trigger: Trigger) => trigger.action);
+        const matches: OnCondition[] = triggers.map((trigger: Trigger) => trigger.action as OnCondition);
 
         let selections = matches;
         if (matches.length > 0 && this.selector) {

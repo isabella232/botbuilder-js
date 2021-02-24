@@ -30,7 +30,7 @@ export class JPath extends ExpressionEvaluator {
      */
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.applyWithError(
-            (args: unknown[]): ValueWithError => JPath.evalJPath(args[0], args[1].toString())
+            (args: readonly unknown[]): ValueWithError => JPath.evalJPath(args[0], args[1].toString())
         );
     }
 

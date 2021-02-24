@@ -32,7 +32,7 @@ export class Base64ToString extends ExpressionEvaluator {
      */
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.apply(
-            (args: unknown[]): string => Buffer.from(args[0] as string, 'base64').toString(),
+            (args: readonly unknown[]): string => Buffer.from(args[0] as string, 'base64').toString(),
             FunctionUtils.verifyString
         );
     }
