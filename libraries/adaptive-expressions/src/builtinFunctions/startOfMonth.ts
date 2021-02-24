@@ -41,7 +41,7 @@ export class StartOfMonth extends ExpressionEvaluator {
         if (!error) {
             ({ format, locale } = FunctionUtils.determineFormatAndLocale(args, 3, format, locale));
             if (typeof args[0] === 'string') {
-                ({ value, error } = StartOfMonth.evalStartOfMonth(args[0], format, locale));
+                ({ value, error } = StartOfMonth.evalStartOfMonth(args[0] as string, format, locale));
             } else {
                 error = `${expr} should contain an ISO format timestamp and an optional output format string.`;
             }

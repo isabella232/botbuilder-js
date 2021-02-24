@@ -66,7 +66,7 @@ export class GetPreviousViableDate extends ExpressionEvaluator {
 
         if (!error) {
             if (args.length === 2 && typeof args[1] === 'string') {
-                const timeZone: string = TimeZoneConverter.windowsToIana(args[1]);
+                const timeZone: string = TimeZoneConverter.windowsToIana(args[1] as string);
                 if (!TimeZoneConverter.verifyTimeZoneStr(timeZone)) {
                     error = `${args[1]} is not a valid timezone`;
                 }

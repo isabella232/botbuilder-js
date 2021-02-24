@@ -30,7 +30,7 @@ export class Int extends ExpressionEvaluator {
         return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
             let error: string;
             if (bigInt.isInstance(args[0])) {
-                return {value: args[0].toJSNumber(), error}
+                    return { value: (args[0] as bigInt.BigInteger).toJSNumber(), error };
             }
             const value: number = parseInt(args[0] as string, 10);
             if (!FunctionUtils.isNumber(value)) {

@@ -29,7 +29,7 @@ export class Round extends ExpressionEvaluator {
         return FunctionUtils.applyWithError((args: unknown[]): ValueWithError => {
             let result: unknown;
             let error: string;
-            if (args.length === 2 && !Number.isInteger(args[1])) {
+            if (args.length === 2 && !FunctionUtils.isInteger(args[1])) {
                 error = `The second parameter ${args[1]} must be an integer.`;
             }
 

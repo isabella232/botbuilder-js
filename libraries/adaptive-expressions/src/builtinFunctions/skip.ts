@@ -45,7 +45,7 @@ export class Skip extends ExpressionEvaluator {
                 start = evaluateResult.value as number;
                 error = evaluateResult.error;
 
-                if (!error && !Number.isInteger(start)) {
+                if (!error && !FunctionUtils.isInteger(start)) {
                     error = `${startExpr} is not an integer.`;
                 }
 

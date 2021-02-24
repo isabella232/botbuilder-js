@@ -324,7 +324,7 @@ export class FunctionUtils {
      */
     public static verifyInteger(value: unknown, expression: Expression, _: number): string | undefined {
         let error: string;
-        if (!Number.isInteger(value)) {
+        if (!FunctionUtils.isInteger(value)) {
             error = `${expression} is not a integer.`;
         }
 
@@ -739,6 +739,16 @@ export class FunctionUtils {
      */
     public static isNumber(instance: unknown): boolean {
         return instance !== undefined && instance !== null && typeof instance === 'number' && !Number.isNaN(instance);
+    }
+
+
+    /**
+     * Is integer helper function.
+     * @param instance Input.
+     * @returns True if the input is an integer.
+     */
+    public static isInteger(instance: unknown): boolean {
+        return FunctionUtils.isNumber(instance) && Number.isInteger(instance as number);
     }
 
     /**

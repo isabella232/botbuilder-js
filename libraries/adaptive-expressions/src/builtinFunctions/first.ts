@@ -29,11 +29,11 @@ export class First extends ExpressionEvaluator {
     private static evaluator(): EvaluateExpressionDelegate {
         return FunctionUtils.apply((args: unknown[]): unknown => {
             let first: unknown;
-            if (typeof args[0] === 'string' && args[0].length > 0) {
+            if (typeof args[0] === 'string' && (args[0] as string).length > 0) {
                 first = args[0][0];
             }
 
-            if (Array.isArray(args[0]) && args[0].length > 0) {
+            if (Array.isArray(args[0]) && (args[0] as unknown[]).length > 0) {
                 first = InternalFunctionUtils.accessIndex(args[0], 0).value;
             }
 

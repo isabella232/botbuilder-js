@@ -40,7 +40,7 @@ export class UriPathAndQuery extends ExpressionEvaluator {
         let error = childrenError;
         if (!error) {
             if (typeof args[0] === 'string') {
-                ({ value, error } = UriPathAndQuery.evalUriPathAndQuery(args[0]));
+                ({ value, error } = UriPathAndQuery.evalUriPathAndQuery(args[0] as string));
             } else {
                 error = `${expr} should contain a URI string.`;
             }

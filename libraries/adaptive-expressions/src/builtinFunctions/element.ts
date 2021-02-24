@@ -42,7 +42,7 @@ export class Element extends ExpressionEvaluator {
             newOptions.nullSubstitution = undefined;
             ({ value: idxValue, error } = index.tryEvaluate(state, newOptions));
             if (!error) {
-                if (Number.isInteger(idxValue)) {
+                if (FunctionUtils.isInteger(idxValue)) {
                     ({ value, error } = InternalFunctionUtils.accessIndex(inst, Number(idxValue)));
                 } else if (typeof idxValue === 'string') {
                     ({ value, error } = InternalFunctionUtils.accessProperty(inst, idxValue.toString()));

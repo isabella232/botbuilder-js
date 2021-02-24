@@ -31,9 +31,9 @@ export class Reverse extends ExpressionEvaluator {
             let value = undefined;
             let error = undefined;
             if (typeof args[0] === 'string') {
-                value = args[0].split('').reverse().join('');
+                value = (args[0] as string).split('').reverse().join('');
             } else if (Array.isArray(args[0])) {
-                value = args[0].reverse();
+                value = (args[0] as unknown[]).reverse();
             } else {
                 error = `${args[0]} is not a string or list.`;
             }

@@ -42,8 +42,14 @@ export class AddToTime extends ExpressionEvaluator {
 
         if (!error) {
             ({ format, locale } = FunctionUtils.determineFormatAndLocale(args, 5, format, locale));
-            if (typeof args[0] === 'string' && Number.isInteger(args[1]) && typeof args[2] === 'string') {
-                ({ value, error } = AddToTime.evalAddToTime(args[0], args[1] as number, args[2], format, locale));
+            if (typeof args[0] === 'string' && FunctionUtils.isInteger(args[1]) && typeof args[2] === 'string') {
+                ({ value, error } = AddToTime.evalAddToTime(
+                    args[0] as string,
+                    args[1] as number,
+                    args[2] as string,
+                    format,
+                    locale
+                ));
             } else {
                 error = `${expression} should contain an ISO format timestamp, a time interval integer, a string unit of time and an optional output format string.`;
             }

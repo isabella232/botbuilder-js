@@ -35,7 +35,7 @@ export class UriScheme extends ExpressionEvaluator {
         let error = childrenError;
         if (!error) {
             if (typeof args[0] === 'string') {
-                ({ value, error } = UriScheme.evalUriScheme(args[0]));
+                ({ value, error } = UriScheme.evalUriScheme(args[0] as string));
             } else {
                 error = `${expr} should contain a URI string.`;
             }

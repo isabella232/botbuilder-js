@@ -30,9 +30,9 @@ export class Count extends ExpressionEvaluator {
         return FunctionUtils.apply((args: unknown[]): number => {
             let count: number;
             if (typeof args[0] === 'string' || Array.isArray(args[0])) {
-                count = args[0].length;
+                count = (args[0] as string).length;
             } else if (args[0] instanceof Map) {
-                count = args[0].size;
+                count = (args[0] as Map<string, unknown>).size;
             } else if (typeof args[0] == 'object') {
                 count = Object.keys(args[0]).length;
             }

@@ -41,16 +41,16 @@ export class Take extends ExpressionEvaluator {
             if (Array.isArray(arr) || typeof arr === 'string') {
                 const startExpr: Expression = expression.children[1];
                 const startEvaluateResult = startExpr.tryEvaluate(state, options);
-                let start = startEvaluateResult.value as number;
+                let start = startEvaluateResult.value;
                 error = startEvaluateResult.error;
 
-                if (!error && !Number.isInteger(start)) {
+                if (!error && !FunctionUtils.isInteger(start)) {
                     error = `${startExpr} is not an integer.`;
                 }
 
                 if (!error) {
-                    start = Math.max(start, 0);
-                    result = arr.slice(0, start);
+                    start = Math.max(start as number, 0);
+                    result = arr.slice(0, start as number);
                 }
             } else {
                 error = `${expression.children[0]} is not array or string.`;

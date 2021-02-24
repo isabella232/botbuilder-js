@@ -37,33 +37,33 @@ export class Substring extends ExpressionEvaluator {
             if (typeof str === 'string') {
                 const startExpr: Expression = expression.children[1];
                 const startEvaluateResult = startExpr.tryEvaluate(state, options);
-                const start = startEvaluateResult.value as number;
+                const start = startEvaluateResult.value;
                 error = startEvaluateResult.error;
 
-                if (!error && !Number.isInteger(start)) {
+                if (!error && !FunctionUtils.isInteger(start)) {
                     error = `${startExpr} is not an integer.`;
                 } else if (start < 0 || start >= str.length) {
                     error = `${startExpr}=${start} which is out of range for ${str}`;
                 }
                 if (!error) {
-                    let length: number;
+                    let length: unknown;
                     if (expression.children.length === 2) {
                         // Without length, compute to end
-                        length = str.length - start;
+                        length = str.length - (start as number);
                     } else {
                         const lengthExpr: Expression = expression.children[2];
                         const lengthEvaluateResult = lengthExpr.tryEvaluate(state, options);
-                        const length = lengthEvaluateResult.value as number;
+                        const length = lengthEvaluateResult.value;
                         error = lengthEvaluateResult.error;
 
-                        if (!error && !Number.isInteger(length)) {
+                        if (!error && !FunctionUtils.isInteger(length)) {
                             error = `${lengthExpr} is not an integer`;
                         } else if (length < 0 || Number(start) + Number(length) > str.length) {
                             error = `${lengthExpr}=${length} which is out of range for ${str}`;
                         }
                     }
                     if (!error) {
-                        result = str.substr(start, length);
+                        result = str.substr(start as number, length as number);
                     }
                 }
             } else if (str === undefined) {

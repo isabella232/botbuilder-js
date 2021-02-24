@@ -30,7 +30,7 @@ export class Max extends ExpressionEvaluator {
             let result = Number.NEGATIVE_INFINITY;
             if (args.length === 1) {
                 if (Array.isArray(args[0])) {
-                    for (const value of args[0]) {
+                    for (const value of args[0] as number[]) {
                         result = Math.max(result, value);
                     }
                 } else {

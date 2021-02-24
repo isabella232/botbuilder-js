@@ -35,7 +35,7 @@ export class TicksToDays extends ExpressionEvaluator {
         const { args, error: childrenError } = FunctionUtils.evaluateChildren(expr, state, options);
         let error = childrenError;
         if (!error) {
-            if (Number.isInteger(args[0])) {
+            if (FunctionUtils.isInteger(args[0])) {
                 value = (args[0] as number) / TicksToDays.TicksPerDay;
             } else {
                 error = `${expr} should contain an integer of ticks`;

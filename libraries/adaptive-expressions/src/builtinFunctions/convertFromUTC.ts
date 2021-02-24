@@ -44,7 +44,12 @@ export class ConvertFromUTC extends ExpressionEvaluator {
         if (!error) {
             ({ format, locale } = FunctionUtils.determineFormatAndLocale(args, 4, format, locale));
             if (typeof args[0] === 'string' && typeof args[1] === 'string') {
-                ({ value, error } = ConvertFromUTC.evalConvertFromUTC(args[0], args[1], format, locale));
+                ({ value, error } = ConvertFromUTC.evalConvertFromUTC(
+                    args[0] as string,
+                    args[1] as string,
+                    format,
+                    locale
+                ));
             } else {
                 error = `${expression} should contain an ISO format timestamp, an origin time zone string and an optional output format string.`;
             }

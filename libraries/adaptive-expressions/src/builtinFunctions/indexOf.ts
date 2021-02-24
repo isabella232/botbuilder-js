@@ -44,7 +44,7 @@ export class IndexOf extends ExpressionEvaluator {
                     error = `Can only look for indexof string in ${expression}`;
                 }
             } else if (Array.isArray(args[0])) {
-                value = args[0].indexOf(args[1]);
+                value = (args[0] as unknown[]).indexOf(args[1]);
             } else {
                 error = `${expression} works only on string or list.`;
             }

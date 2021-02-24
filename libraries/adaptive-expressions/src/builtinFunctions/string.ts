@@ -41,7 +41,7 @@ export class String extends ExpressionEvaluator {
 
                 if (!error) {
                     if (typeof args[0] === 'string') {
-                        result = args[0];
+                        result = args[0] as string;
                     } else if (typeof args[0] === 'number') {
                         const formatLocale = localeInfo[locale];
                         const tempStrValue = args[0].toString();
@@ -57,7 +57,7 @@ export class String extends ExpressionEvaluator {
                             result = d3format(fixedNotation)(args[0]);
                         }
                     } else if (args[0] instanceof Date) {
-                        result = args[0].toLocaleDateString(locale);
+                        result = (args[0] as Date).toLocaleDateString(locale);
                     } else {
                         result = JSON.stringify(args[0])
                             .replace(/(^['"]*)/g, '') // remove the starting single or double quote

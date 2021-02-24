@@ -39,9 +39,12 @@ export class GetFutureTime extends ExpressionEvaluator {
         const { args, error: childrenError } = FunctionUtils.evaluateChildren(expression, state, options);
         let error = childrenError;
         if (!error) {
-            if (Number.isInteger(args[0]) && typeof args[1] === 'string') {
+            if (FunctionUtils.isInteger(args[0]) && typeof args[1] === 'string') {
                 ({ format, locale } = FunctionUtils.determineFormatAndLocale(args, 4, format, locale));
-                const { duration, tsStr } = InternalFunctionUtils.timeUnitTransformer(args[0] as number, args[1]);
+                const { duration, tsStr } = InternalFunctionUtils.timeUnitTransformer(
+                    args[0] as number,
+                    args[1] as string
+                );
                 if (tsStr === undefined) {
                     error = `${args[2]} is not a valid time unit.`;
                 } else {

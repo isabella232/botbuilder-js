@@ -41,32 +41,32 @@ export class SubArray extends ExpressionEvaluator {
             if (Array.isArray(arr)) {
                 const startExpr: Expression = expression.children[1];
                 const startEvaluateResult = startExpr.tryEvaluate(state, options);
-                const start = startEvaluateResult.value as number;
+                const start = startEvaluateResult.value;
                 error = startEvaluateResult.error;
 
-                if (!error && !Number.isInteger(start)) {
+                if (!error && !FunctionUtils.isInteger(start)) {
                     error = `${startExpr} is not an integer.`;
                 } else if (start < 0 || start >= arr.length) {
                     error = `${startExpr}=${start} which is out of range for ${arr}`;
                 }
                 if (!error) {
-                    let end: number;
+                    let end: unknown;
                     if (expression.children.length === 2) {
                         end = arr.length;
                     } else {
                         const endExpr: Expression = expression.children[2];
                         const endEvaluateResult = endExpr.tryEvaluate(state, options);
-                        const end = endEvaluateResult.value as number;
+                        const end = endEvaluateResult.value;
                         error = endEvaluateResult.error;
 
-                        if (!error && !Number.isInteger(end)) {
+                        if (!error && !FunctionUtils.isInteger(end)) {
                             error = `${endExpr} is not an integer`;
                         } else if (end < 0 || end > arr.length) {
                             error = `${endExpr}=${end} which is out of range for ${arr}`;
                         }
                     }
                     if (!error) {
-                        result = arr.slice(start, end);
+                        result = arr.slice(start as number, end as number);
                     }
                 }
             } else {
