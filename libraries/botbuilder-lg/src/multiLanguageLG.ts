@@ -6,6 +6,7 @@
  * Licensed under the MIT License.
  */
 
+import { MemoryInterface } from 'adaptive-expressions';
 import { Templates } from './templates';
 
 /**
@@ -899,7 +900,7 @@ export class MultiLanguageLG {
      * @param data Scope data.
      * @param locale Locale info.
      */
-    public generate(template: string, data?: object, locale?: string): any {
+    public generate(template: string, data?: MemoryInterface | Record<string, unknown>, locale?: string): unknown {
         if (!template) {
             throw new Error('template is empty');
         }

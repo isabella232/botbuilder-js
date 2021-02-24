@@ -29,7 +29,7 @@ export class CustomizedMemory implements MemoryInterface {
      * @param scope Optional. Scope.
      * @param localMemory Optional. Local memory.
      */
-    public constructor(scope?: any, localMemory?: MemoryInterface) {
+    public constructor(scope?: MemoryInterface | Record<string, unknown>, localMemory?: MemoryInterface) {
         this.globalMemory = !scope ? undefined : SimpleObjectMemory.wrap(scope);
         this.localMemory = localMemory;
     }
@@ -40,7 +40,7 @@ export class CustomizedMemory implements MemoryInterface {
      * @param path Memory path.
      * @returns Resolved value.
      */
-    public getValue(path: string): any {
+    public getValue(path: string): unknown {
         if (this.localMemory) {
             const value = this.localMemory.getValue(path);
             if (value !== undefined) {
@@ -61,7 +61,7 @@ export class CustomizedMemory implements MemoryInterface {
      * @param _value Value to set.
      */
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    public setValue(_path: string, _value: any): void {
+    public setValue(_path: string, _value: unknown): void {
         return;
     }
 

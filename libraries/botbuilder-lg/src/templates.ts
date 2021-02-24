@@ -18,6 +18,7 @@ import {
     ReturnType,
     FunctionUtils,
     SimpleObjectMemory,
+    MemoryInterface,
 } from 'adaptive-expressions';
 import { ImportResolverDelegate, TemplatesTransformer } from './templatesParser';
 import { Evaluator } from './evaluator';
@@ -250,7 +251,11 @@ export class Templates implements Iterable<Template> {
      * @param scope The state visible in the evaluation.
      * @returns Evaluate result.
      */
-    public evaluate(templateName: string, scope?: object, opt: EvaluationOptions = undefined): any {
+    public evaluate(
+        templateName: string,
+        scope?: MemoryInterface | Record<string, unknown>,
+        opt: EvaluationOptions = undefined
+    ): unknown {
         this.checkErrors();
 
         const evalOpt = opt !== undefined ? opt.merge(this.lgOptions) : this.lgOptions;
@@ -270,7 +275,11 @@ export class Templates implements Iterable<Template> {
      * @param scope The state visible in the evaluation.
      * @returns Expand result.
      */
-    public expandTemplate(templateName: string, scope?: object, opt: EvaluationOptions = undefined): any[] {
+    public expandTemplate(
+        templateName: string,
+        scope?: MemoryInterface | Record<string, unknown>,
+        opt: EvaluationOptions = undefined
+    ): unknown[] {
         this.checkErrors();
 
         const evalOpt = opt !== undefined ? opt.merge(this.lgOptions) : this.lgOptions;
@@ -295,7 +304,11 @@ export class Templates implements Iterable<Template> {
      * @param inlineStr Inline string which will be evaluated.
      * @param scope Scope object or JToken.
      */
-    public evaluateText(inlineStr: string, scope?: object, opt: EvaluationOptions = undefined): any {
+    public evaluateText(
+        inlineStr: string,
+        scope?: MemoryInterface | Record<string, unknown>,
+        opt: EvaluationOptions = undefined
+    ): unknown {
         if (inlineStr === undefined) {
             throw Error('inline string is empty');
         }
@@ -625,10 +638,10 @@ export class Templates implements Iterable<Template> {
                         newGlobalName,
                         new ExpressionEvaluator(
                             newGlobalName,
-                            (expr, state, options): { value: any; error: string } => {
-                                let value: any;
+                            (expr, state, options): { value: unknown; error: string } => {
+                                let value: unknown;
                                 let error: string;
-                                let args: any[];
+                                let args: unknown[];
                                 const evaluator = new Evaluator(
                                     this.allTemplates,
                                     this.expressionParser,
@@ -638,8 +651,8 @@ export class Templates implements Iterable<Template> {
                                 ({ args, error } = FunctionUtils.evaluateChildren(expr, state, options));
                                 if (!error) {
                                     const parameters = evaluator.templateMap[templateName].parameters;
-                                    const newScope: any = {};
-                                    parameters.map((e: string, i: number): void => (newScope[e] = args[i]));
+                                    const newScope: Record<string, unknown> = {};
+                                    parameters.map((e: string, i: number): unknown => (newScope[e] = args[i]));
                                     const scope = new CustomizedMemory(state, new SimpleObjectMemory(newScope));
                                     try {
                                         value = evaluator.evaluateTemplate(templateName, scope);

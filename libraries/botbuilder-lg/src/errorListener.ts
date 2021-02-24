@@ -15,7 +15,7 @@ import { TemplateErrors } from './templateErrors';
 /**
  * LG parser error listener.
  */
-export class ErrorListener implements ANTLRErrorListener<any> {
+export class ErrorListener implements ANTLRErrorListener<void> {
     private readonly source: string;
     private lineOffset: number;
 
@@ -42,8 +42,9 @@ export class ErrorListener implements ANTLRErrorListener<any> {
      * @param e Exception.
      */
     public syntaxError<T>(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         recognizer: Recognizer<T, any>,
-        offendingSymbol: any,
+        offendingSymbol: T,
         line: number,
         charPositionInLine: number,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -54,7 +55,7 @@ export class ErrorListener implements ANTLRErrorListener<any> {
         const startPosition: Position = new Position(this.lineOffset + line, charPositionInLine);
         const stopPosition: Position = new Position(
             this.lineOffset + line,
-            charPositionInLine + offendingSymbol.stopIndex - offendingSymbol.startIndex + 1
+            charPositionInLine + offendingSymbol['stopIndex'] - offendingSymbol['startIndex'] + 1
         );
         const range: Range = new Range(startPosition, stopPosition);
         const diagnostic: Diagnostic = new Diagnostic(
