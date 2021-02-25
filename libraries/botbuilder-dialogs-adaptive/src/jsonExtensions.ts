@@ -15,7 +15,7 @@ import { ValueExpression } from 'adaptive-expressions';
  * @param unit An object.
  * @returns Deep data binding result.
  */
-export function replaceJsonRecursively(state: DialogStateManager, unit: object): any {
+export function replaceJsonRecursively(state: DialogStateManager, unit: unknown): any {
     if (typeof unit === 'string') {
         const { value, error } = new ValueExpression(unit).tryGetValue(state);
         if (!error) {
