@@ -31,7 +31,7 @@ export class TemplateEngineLanguageGenerator<T = unknown, D extends Record<strin
     private lg: Templates;
 
     public id = '';
-
+ 
     /**
      * Initializes a new instance of the [TemplateEngineLanguageGenerator](xref:botbuilder-dialogs-adaptive.TemplateEngineLanguageGenerator) class.
      * @param arg1 Optional. An LG [Templates](xref:botbuilder-lg.Templates) or a [Resource](xref:botbuilder-dialogs-declarative.Resource).
