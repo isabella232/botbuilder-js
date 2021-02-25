@@ -371,13 +371,13 @@ export class Expression {
      * Global state to evaluate accessor expressions against.  Can Dictionary be otherwise reflection is used to access property and then indexer.
      * @param state
      */
-    public tryEvaluate(state: MemoryInterface | Record<string, unknown>, options: Options = undefined): ValueWithError {
+    public tryEvaluate(state: MemoryInterface | unknown, options: Options = undefined): ValueWithError {
         if (!Extensions.isMemoryInterface(state)) {
             state = SimpleObjectMemory.wrap(state);
         }
 
         options = options ? options : new Options();
-        return this.evaluator.tryEvaluate(this, state, options);
+        return this.evaluator.tryEvaluate(this, state as MemoryInterface, options);
     }
 
     /**

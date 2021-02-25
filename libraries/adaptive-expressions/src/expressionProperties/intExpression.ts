@@ -28,7 +28,7 @@ export class IntExpression extends ExpressionProperty<number> {
      * @param data Data to use for expression binding.
      * @returns Value of int number
      */
-    public tryGetValue(data: MemoryInterface | Record<string, unknown>): { value: number; error: Error } {
+    public tryGetValue(data: MemoryInterface | unknown): { value: number; error: Error } {
         const result = super.tryGetValue(data);
         if (typeof result.value == 'number') {
             // Ensure returned value is an int.

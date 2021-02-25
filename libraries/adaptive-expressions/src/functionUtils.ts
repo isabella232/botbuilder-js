@@ -430,7 +430,7 @@ export class FunctionUtils {
      */
     public static evaluateChildren(
         expression: Expression,
-        state: MemoryInterface | Record<string, unknown>,
+        state: MemoryInterface,
         options: Options,
         verify?: VerifyExpression
     ): { args: unknown[]; error: string } {

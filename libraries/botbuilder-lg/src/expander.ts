@@ -91,7 +91,7 @@ export class Expander extends AbstractParseTreeVisitor<unknown[]> implements LGT
      * @param scope Given scope.
      * @returns All possiable results.
      */
-    public expandTemplate(templateName: string, scope: MemoryInterface | Record<string, unknown>): unknown[] {
+    public expandTemplate(templateName: string, scope: MemoryInterface | unknown): unknown[] {
         const memory = scope instanceof CustomizedMemory ? scope : new CustomizedMemory(scope);
         if (!(templateName in this.templateMap)) {
             throw new Error(TemplateErrors.templateNotExist(templateName));
@@ -488,7 +488,7 @@ export class Expander extends AbstractParseTreeVisitor<unknown[]> implements LGT
     /**
      * @private
      */
-    private evalByAdaptiveExpression(exp: string, scope: MemoryInterface | Record<string, unknown>): ValueWithError {
+    private evalByAdaptiveExpression(exp: string, scope: MemoryInterface): ValueWithError {
         const expanderExpression: Expression = this.expanderExpressionParser.parse(exp);
         const evaluatorExpression: Expression = this.evaluatorExpressionParser.parse(exp);
         const parse: Expression = this.reconstructExpression(expanderExpression, evaluatorExpression, false);

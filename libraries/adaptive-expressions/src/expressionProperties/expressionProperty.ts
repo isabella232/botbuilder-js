@@ -86,7 +86,7 @@ export class ExpressionProperty<T> {
      * @param data Data to use for expression binding.
      * @returns The value.
      */
-    public getValue(data: Record<string, unknown> | MemoryInterface): T {
+    public getValue(data: MemoryInterface | unknown): T {
         const { value, error } = this.tryGetValue(data);
         if (error) {
             throw error;
@@ -100,7 +100,7 @@ export class ExpressionProperty<T> {
      * @param data Data to use for expression binding.
      * @returns the value or an error.
      */
-    public tryGetValue(data: MemoryInterface | Record<string, unknown>): { value: T; error: Error } {
+    public tryGetValue(data: MemoryInterface | unknown): { value: T; error: Error } {
         if (!this.expression && this.expressionText) {
             this.expression = Expression.parse(this.expressionText.replace(/^=/, ''));
         }

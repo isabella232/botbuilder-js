@@ -900,7 +900,7 @@ export class MultiLanguageLG {
      * @param data Scope data.
      * @param locale Locale info.
      */
-    public generate(template: string, data?: MemoryInterface | Record<string, unknown>, locale?: string): unknown {
+    public generate(template: string, data?: MemoryInterface | unknown, locale?: string): unknown {
         if (!template) {
             throw new Error('template is empty');
         }

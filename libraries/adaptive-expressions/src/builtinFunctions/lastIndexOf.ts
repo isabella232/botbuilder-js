@@ -30,11 +30,7 @@ export class LastIndexOf extends ExpressionEvaluator {
     /**
      * @private
      */
-    private static evaluator(
-        expression: Expression,
-        state: MemoryInterface | Record<string, unknown>,
-        options: Options
-    ): ValueWithError {
+    private static evaluator(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
         let value = -1;
         const { args, error: childrenError } = FunctionUtils.evaluateChildren(expression, state, options);
         let error = childrenError;

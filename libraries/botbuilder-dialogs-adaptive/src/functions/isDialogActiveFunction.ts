@@ -41,7 +41,7 @@ export class IsDialogActiveFunction extends ExpressionEvaluator {
     }
 
     private static function(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
-        const stack: string[] = state.getValue('dialogcontext.stack');
+        const stack = state.getValue('dialogcontext.stack') as string[];
         if (!stack) {
             return { value: undefined, error: 'dialogcontext.stack not found' };
         }

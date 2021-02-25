@@ -33,7 +33,7 @@ export class HasPendingActionsFunction extends ExpressionEvaluator {
     }
 
     private static function(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
-        const actions: unknown[] = state.getValue('dialog._adaptive.actions');
+        const actions = state.getValue('dialog._adaptive.actions') as unknown[];
         if (actions) {
             return {
                 value: actions.length > 0,

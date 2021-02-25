@@ -30,7 +30,7 @@ export type ValueWithError = {
  */
 export type EvaluateExpressionDelegate = (
     expression: Expression,
-    state: MemoryInterface | Record<string, unknown>,
+    state: MemoryInterface,
     options: Options
 ) => ValueWithError;
 
@@ -99,11 +99,8 @@ export class ExpressionEvaluator {
      * @param expression Expression to evaluate.
      * @param state Global state information.
      */
-    public tryEvaluate = (
-        expression: Expression,
-        state: MemoryInterface | Record<string, unknown>,
-        options: Options
-    ): ValueWithError => this._evaluator(expression, state, options);
+    public tryEvaluate = (expression: Expression, state: MemoryInterface, options: Options): ValueWithError =>
+        this._evaluator(expression, state, options);
     /**
      * Validate an expression.
      * @param expression Expression to validate.

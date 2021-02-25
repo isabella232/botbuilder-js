@@ -88,7 +88,7 @@ export class Evaluator extends AbstractParseTreeVisitor<unknown> implements LGTe
      * @param scope Scope.
      * @returns Evaluate result.
      */
-    public evaluateTemplate(inputTemplateName: string, scope: MemoryInterface | Record<string, unknown>): unknown {
+    public evaluateTemplate(inputTemplateName: string, scope: MemoryInterface | unknown): unknown {
         const memory = scope instanceof CustomizedMemory ? scope : new CustomizedMemory(scope);
         const { reExecute, pureTemplateName: templateName } = this.parseTemplateName(inputTemplateName);
 
@@ -557,7 +557,7 @@ export class Evaluator extends AbstractParseTreeVisitor<unknown> implements LGTe
     /**
      * @private
      */
-    private evalByAdaptiveExpression(exp: string, scope: MemoryInterface | Record<string, unknown>): ValueWithError {
+    private evalByAdaptiveExpression(exp: string, scope: MemoryInterface): ValueWithError {
         const parse: Expression = this.expressionParser.parse(exp);
         const opt = new Options();
         opt.nullSubstitution = this.lgOptions.nullSubstitution;

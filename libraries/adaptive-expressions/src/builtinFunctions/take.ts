@@ -28,11 +28,7 @@ export class Take extends ExpressionEvaluator {
     /**
      * @private
      */
-    private static evaluator(
-        expression: Expression,
-        state: MemoryInterface | Record<string, unknown>,
-        options: Options
-    ): ValueWithError {
+    private static evaluator(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
         let result: unknown;
         const { value: arr, error: childrenError } = expression.children[0].tryEvaluate(state, options);
         let error = childrenError;

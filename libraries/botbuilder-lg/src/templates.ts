@@ -253,7 +253,7 @@ export class Templates implements Iterable<Template> {
      */
     public evaluate(
         templateName: string,
-        scope?: MemoryInterface | Record<string, unknown>,
+        scope?: MemoryInterface | unknown,
         opt: EvaluationOptions = undefined
     ): unknown {
         this.checkErrors();
@@ -277,7 +277,7 @@ export class Templates implements Iterable<Template> {
      */
     public expandTemplate(
         templateName: string,
-        scope?: MemoryInterface | Record<string, unknown>,
+        scope?: MemoryInterface | unknown,
         opt: EvaluationOptions = undefined
     ): unknown[] {
         this.checkErrors();
@@ -306,7 +306,7 @@ export class Templates implements Iterable<Template> {
      */
     public evaluateText(
         inlineStr: string,
-        scope?: MemoryInterface | Record<string, unknown>,
+        scope?: MemoryInterface | unknown,
         opt: EvaluationOptions = undefined
     ): unknown {
         if (inlineStr === undefined) {

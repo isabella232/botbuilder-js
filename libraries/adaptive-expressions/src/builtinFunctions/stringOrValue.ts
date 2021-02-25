@@ -31,11 +31,7 @@ export class StringOrValue extends ExpressionEvaluator {
     /**
      * @private
      */
-    private static evaluator(
-        expression: Expression,
-        state: MemoryInterface | Record<string, unknown>,
-        options: Options
-    ): ValueWithError {
+    private static evaluator(expression: Expression, state: MemoryInterface, options: Options): ValueWithError {
         const { value: stringInput, error: childrenError } = expression.children[0].tryEvaluate(state, options);
         let error = childrenError;
 
