@@ -66,7 +66,7 @@ export class BaseInvokeDialog<O extends object = {}>
     public getConverter(property: keyof BaseInvokeDialogConfiguration): Converter | ConverterFactory {
         switch (property) {
             case 'options':
-                return new ObjectExpressionConverter<object>();
+                return new ObjectExpressionConverter<Record<string, unknown>>();
             case 'dialog':
                 return DialogExpressionConverter;
             case 'activityProcessed':
