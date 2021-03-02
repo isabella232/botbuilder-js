@@ -24,7 +24,7 @@ export type Options = {
 
 const defaultOptions: Options = {
     port: 3978,
-    messagingEndpointPath: '/api/messages'
+    messagingEndpointPath: '/api/messages',
 };
 
 /**
